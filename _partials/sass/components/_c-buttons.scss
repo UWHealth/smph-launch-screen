@@ -1,0 +1,69 @@
+/* SG
+# Buttons
+Applying the `btn` class to anything will make it look like a button. Always declare `type="button"` on `<button>` elements for proper accessibility.
+
+```html_example
+<button type="button" class="btn">Button</button>
+
+<button type="button" class="btn btn-reversed">Reversed Button</button>
+
+<a href="" class="btn">Faux Button</a>
+```
+
+*/
+
+//Useful placeholder selector for simple button creation.
+
+%button {
+    display: inline-block;
+    font-weight: 700;
+    padding: 0 .675em;
+    @include type-space(padding-top padding-bottom, .5);
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    background-color: color(badgers);
+    transition: box-shadow .2s ease-in-out;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        box-shadow: 0 1.5px 4px rgba(black,.24),
+            0 1.5px 6px rgba(black,.12);
+        color: #fff;
+    }
+
+    &:active {
+        box-shadow: 0 0 4px 1px rgba(color('links','light'), .3);
+        outline: none;
+    }
+
+}
+
+%button_big {
+    @include font-size(modular-scale(2), false);
+    line-height: .9;
+    @include type-space((padding-top, padding-bottom), 1);
+}
+
+%button_small {
+    @include font-size(modular-scale(0), false);
+    line-height: 1;
+}
+
+%button_wide {
+    width: 100%;
+}
+
+.btn {
+    @extend %button;
+}
+
+.btn-reversed {
+    color: color(badgers) !important;
+    background-color: #fff;
+}

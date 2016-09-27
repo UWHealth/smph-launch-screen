@@ -1,0 +1,51 @@
+{
+  "name": "SMPH-Lauch-screen",
+  "version": "1.0.0",
+  "description": "Start page for UW School of Medicine and Public Health",
+  "main": "index.js",
+  "scripts": {
+    "styleguide": "node node_modules/markdown-documentation-generator/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UWHealth/smph-launch-screen.git"
+  },
+  "keywords": [
+    "Sass",
+    "CSS",
+  ],
+  "author": "Office of e-Health Innovation and Policy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UWHealth/smph-launch-screen/issues"
+  },
+  "homepage": "https://github.com/UWHealth/smph-launch-screen",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.7.6",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-cssnano": "^2.1.0",
+    "gulp-debug": "^2.0.1",
+    "gulp-filter": "^4.0.0",
+    "gulp-if": "^2.0.1",
+    "gulp-include": "^2.3.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-kit": "^0.3.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^2.1.1",
+    "gulp-shell": "^0.5.1",
+    "gulp-size": "^2.1.0",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.5",
+    "jshint": "^2.9.3",
+    "jshint-stylish": "^2.0.1",
+    "markdown-documentation-generator": "^2.2.0",
+    "yargs": "^5.0.0"
+  }
+}

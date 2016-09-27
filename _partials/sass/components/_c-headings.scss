@@ -1,0 +1,91 @@
+/* SG
+# Typography/Heading sizes
+
+Moving from `h6` up to `h1`, the heading font sizes get larger on a scale. For instance, `h6` is 1.35 times larger than the base font size of 16px. Headings have a default bottom margin of 24px.
+
+**Heading tags should be used in a hierarchical manner**, appropriate for the page, and not used for their size. To override a heading size, use a class with the corresponding heading name. See the example below.
+
+```html_example
+<h1>h1. Heading 1</h1>
+<h2>h2. Heading 2</h2>
+<h3>h3. Heading 3</h3>
+<h4>h4. Heading 4</h4>
+<h5>h5. Heading 5</h5>
+<h6>h6. Heading 6</h6>
+
+<h1 class="h4">Heading 1 with an h4 class</h1>
+
+<h3 class="bar bar--mini">Heading 3 with mini bar</h3>
+
+<h2 class="heading--section bar bar--large">Section Heading (large bar)</h2>
+
+```
+*/
+%heading_space {
+	@include type-space(margin-bottom, 1);
+}
+
+.h1 {
+    @include type-font-size($type-h1-size, $h1-lh);
+}
+.h2 {
+    @include type-font-size($type-h2-size, $h2-lh);
+}
+.h3 {
+    @include type-font-size($type-h3-size, $h3-lh);
+}
+.h4 {
+    @include type-font-size($type-h4-size, $h4-lh);
+}
+.h5 {
+    @include type-font-size($type-h5-size, $h5-lh);
+}
+.h6 {
+    @include type-font-size($type-h6-size, $h6-lh);
+}
+
+@include headings(1, 6, '.') {
+	font-weight: 800;
+	@extend %heading_space;
+
+    & + p {
+        @include type-space(margin-top, -1);
+    }
+}
+
+.heading--section {
+	color: color(badgers);
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+}
+
+.bar {
+
+	&:before {
+		display: block;
+		position: relative;
+		content: '\25A0 \25A0 \25A0 \25A0 \25A0 \25A0 \25A0 \25A0 \25A0 \25A0 \25A0 \25A0 \25A0'; //black squares
+		letter-spacing: -.25em;
+		font-size: 12px; //Bar is half the height
+		line-height: 0;
+		font-weight: normal;
+	}
+}
+
+.bar--large {
+	@include type-space(margin-top, 2);
+
+	&:before {
+		@include type-space(top, -1.25);
+	}
+}
+
+.bar--mini {
+	@include type-space(margin-top, 1.5);
+
+	&:before {
+		font-size: 6px;
+		@include type-space(top, -.5);
+	}
+}

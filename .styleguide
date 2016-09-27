@@ -1,0 +1,41 @@
+{
+	"sgComment": "SG",
+	"exampleIdentifier": "html_example",
+	"sortCategories": true,
+	"excludeDirs": [
+		"target",
+		"node_modules",
+		".git"
+	],
+	"fileExtensions": {
+		"scss": true,
+		"sass": false,
+		"css": false,
+		"less": true,
+		"md": true
+	},
+	"templateFile": "./styleguide/imports/template.hbs",
+	"themeFile": "./css/styleguide.min.css",
+	"htmlOutput": "./styleguide/index.html",
+	"jsonOutput": "./styleguide/index.json",
+	"handlebarsPartials": {
+		"jquery": "./styleguide/imports/jquery.js",
+		"toc": "./styleguide/imports/toc.js",
+		"sprite": "./_partials/svg/sprite.svg"
+	},
+  "sections": {
+    "patterns": "",
+    "development": "[[dev]]",
+		"getting started": "Setup:"
+  },
+	"highlightStyle": "dark",
+	"highlightFolder": "./node_modules/highlight.js/styles/",
+	"customVariables": {
+		"tocMenu": true,
+		"pageTitle": "SMPH - Documentation"
+	},
+	"markedOptions": {
+		"gfm": true,
+		"breaks": true
+	}
+}

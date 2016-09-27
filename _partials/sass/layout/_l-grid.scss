@@ -1,0 +1,97 @@
+//Create grid classes
+
+@include grid-init();
+
+
+/* SG
+
+# Layout/Grid
+
+@priority 1
+
+Grids consist of a container (`.grid`) and blocks (`.grid__item`). The width of the blocks are determined by width classes (e.g. `.w-one-half`).
+
+Grids are built on `inline-block`
+
+```html_example
+<div class="grid">
+    <div class="grid__item">100%</div>
+    <div class="grid__item w-half">50%</div><div class="grid__item w-half">50%</div>
+    <div class="grid__item w-third">33.33%</div><div class="grid__item w-third">33.33%</div><div class="grid__item w-third">33.33%</div>
+    <div class="grid__item w-half">50%</div><div class="grid__item w-quarter">25%</div><div class="grid__item w-quarter">25%</div>
+</div>
+
+<p><strong>Grid with wide gutters</strong></p>
+
+<div class="grid grid--wide">
+    <div class="grid__item w-half">50%</div><div class="grid__item w-half">50%</div>
+    <div class="grid__item w-third">33.33%</div><div class="grid__item w-third">33.33%</div><div class="grid__item w-third">33.33%</div>
+    <div class="grid__item w-half">50%</div><div class="grid__item w-quarter">25%</div><div class="grid__item w-quarter">25%</div>
+</div>
+```
+
+*/
+
+.grid {
+    @extend %grid;
+}
+
+.grid--wide {
+    @extend %grid_wide;
+}
+
+.grid--narrow {
+    @extend %grid_narrow;
+}
+
+.grid--full {
+	@extend %grid_full;
+}
+
+.grid > * {
+	@extend %grid_reset;
+}
+
+.grid--stack {
+    @include mq(smalls){
+        & > .grid__item {
+            width: 100%;
+        }
+    }
+}
+
+.grid__item {
+    @extend %grid_item;
+}
+
+.w-whole {
+    @extend %one_whole;
+}
+
+.w-half {
+	@extend %one_half;
+}
+
+.w-third {
+    @extend %one_third;
+}
+
+.w-two-thirds {
+    @extend %two_thirds;
+}
+
+.w-three-quarters {
+    @extend %three_quarters;
+}
+
+.w-quarter {
+	@extend %one_quarter;
+}
+
+.grid__sidebar {
+    @extend %bigs_one_quarter;
+}
+
+.grid__content {
+    @extend %bigs_three_quarters;
+}
