@@ -556,9 +556,13 @@ Each easing variable is a cubic-bezier value that specifies rate of change of an
 
 */
 /* SG
-# Config/Typography Settings [[dev]]
+# Config/
 
-@file _config.scss
+## Settings and configuration for all styles.
+
+*/
+/* SG
+# Config/Typography Settings [[dev]]
 
 ##### `$$base-font-size`
 ###### Pixel value
@@ -592,9 +596,7 @@ Determines whether to generate css for paragraphs with a text indent, rather tha
 /* SG
 # Config/Typography Settings [[dev]]
 
-@file _config.scss
-
-##### `$$type-[h#]-size`
+##### `$$type-[]-size`
 ###### List (pixel value [, pixel or unitless value])
 Variables used to generate heading (and small) font-sizes and line-heights. A secondary value will force the line-height to that base-value.
 
@@ -603,16 +605,17 @@ _NOTE: First value must be pixel values(or a function that generates a pixel val
 /* SG
 # Config/Typography Settings [[dev]]
 
-@file _config.scss
-
 ##### `$$primary-font-stack`, `$$secondary-font-stack`, `$$monospace-font-stack`, `$$icon-font-stack`
 ###### String
 Used wherever font-families are declared. Use `null` if nothing exists.
 
+*/
+/* SG
 ##### `$$use-web-fonts`
 ###### Boolean
 Whether to generate `@font-face` values based on `$$font-file-name` (and the other `$font-` variables).
-
+*/
+/* SG
 ##### `$$font-file-name`
 ###### List (string)
 Uses for automatically generated `@font-face` declarations. Describes the filename as well as the font-family name reference. _File names and @font-face values must be the same (e.g. 'opensans' and 'opensans.ttf').**Casing matters**._
@@ -625,6 +628,8 @@ Each parenthesis corresponds to each name in `$$font-file-name`. Determines how 
 ###### List (nested) (boolean)
 Corresponds to each value in `$$font-weights`. (e.g. if `$font-weights: (400,700),(200,400)` and `$font-italics: (true),(false,true)` then the first font will have italics in the 400 and 700 weights while second font will have italics in the 400 weight).
 
+*/
+/* SG
 ##### `$$font-include-woff2`
 ###### Boolean (list)
 Determines whether woff2 formats be included in the `@font-face` generation. Can be a list if each font has different values (not recommended since woff2 is the most performant font-file format).
@@ -632,16 +637,18 @@ Determines whether woff2 formats be included in the `@font-face` generation. Can
 ##### `$$font-include-eot`
 ###### Boolean (list)
 Determines whether to generate `@font-face` values that point at an .eot file. Fallback for IE8.
-
 */
 /* SG
 # Config/Grid Settings [[dev]]
 
-@file _config.scss
-
 ##### `$$max-site-width`
 ###### Pixel value
 Maximum desktop width for the site wrapper.
+
+*/
+/* SG
+
+# Config/Grid Settings [[dev]]
 
 ##### `$$grid-columns`
 ###### Number
@@ -650,6 +657,9 @@ Base number of grid columns to be generated. Note that any column number will in
 ##### `$$grid-gutter`
 ###### Pixel value
 Space between grid items. Also used in `type-space()` for horizontal spacing units.
+
+*/
+/* SG
 
 ##### `$$grid-silent-classes`
 ###### Boolean
@@ -666,6 +676,8 @@ If set to `true`, html must have no white space (or comments) between grid items
 ##### `$$grid-floats`
 ###### Boolean
 If set to `true`, the grid uses floats instead of inline-block for layout.
+*/
+/* SG
 
 ##### `$$breakpoints-has-widths`, `$$breakpoints-has-push`, `$$breakpoints-has-pull`
 ###### List (string)
@@ -700,7 +712,6 @@ $display-classes: ('show':'block');
 //CSS output
 .show { display: block; }
 ```
-
 */
 /* SG
 
@@ -1886,10 +1897,6 @@ Include a bunch of elements with `class="color-blocks"`, and the css will do the
   color: #8e8e92;
 }
 
-.sg-heading-6 {
-  font-weight: normal;
-}
-
 .sg-heading-5 + .sg-heading-6 {
   margin-top: -1rem;
   padding-bottom: .25rem;
@@ -1900,7 +1907,7 @@ Include a bunch of elements with `class="color-blocks"`, and the css will do the
   padding-bottom: 1.5em;
 }
 
-/* Article spacing */
+/* Spacing */
 .sg-section,
 .sg-article_comment,
 .sg-example {

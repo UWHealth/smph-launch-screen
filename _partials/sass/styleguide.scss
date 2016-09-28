@@ -252,10 +252,6 @@ Include a bunch of elements with `class="color-blocks"`, and the css will do the
 	color: color(type, light);
 }
 
-.sg-heading-6 {
-    font-weight: normal;
-}
-
 .sg-heading-5 + .sg-heading-6 {
     margin-top: -1rem;
     padding-bottom: .25rem;
@@ -268,7 +264,7 @@ Include a bunch of elements with `class="color-blocks"`, and the css will do the
     padding-bottom: 1.5em;
 }
 
-/* Article spacing */
+/* Spacing */
 
 .sg-section,
 .sg-article_comment,

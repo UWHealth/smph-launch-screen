@@ -1,0 +1,99 @@
+.panels {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.panel {
+    @include type-space(padding, 1 .9);
+    position: relative;
+    flex: 1 1 auto;
+
+    @include mq(smalls) {
+        @include type-space(padding, .5 .45);
+    }
+}
+
+.panel--white {
+    background-color: #fff;
+    color: color(badgers) !important;
+}
+
+.panel--red {
+    background-color: color(badgers);
+    background-image: url('../images/dust-overlay.png');
+    background-repeat: repeat;
+    color: #fff !important;
+}
+
+.panel--dust-2 {
+    background-image: url('../images/dust-overlay-2.png');
+}
+
+.panel--elevated {
+    box-shadow: 0 3px 26px 4px rgba(mix(color(badgers), color(type), 20%), .4);
+    z-index: 1;
+}
+
+.panel--link {
+    display: block;
+    top: 0;
+    transition: all .2s ease-in-out;
+}
+
+.panel--link:hover,
+.panel--link:focus {
+    text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 15px 26px -3px rgba(mix(color(badgers), color(type), 20%), .5),
+        0 3px 25px -25px rgba(color(type), .5),
+        0 3px 10px 2px rgba(color(type), .3);
+}
+
+.panel--flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.panel__head {
+    text-transform: uppercase;
+    @include type-space(margin-bottom, 4);
+    margin-bottom: 6vh;
+
+    @include mq(smalls){
+        font-size: 5vw;
+    }
+}
+
+.panel__cta {
+    @include rems(font-size, $type-h5-size);
+    font-family: $secondary-font-stack;
+    font-style: italic;
+
+    @include mq(smalls) {
+        word-break: break-all;
+        @include rems(font-size, $base-font-size);
+    }
+
+    &:after {
+        content: "\00a0\00BB";
+    }
+
+    .panel:hover & {
+        text-decoration: underline;
+    }
+}
+
+.slider {
+    overflow-x: hidden;
+}
+
+.slick-slide {
+    display: inline-block;
+}
+
+.panel--slide {
+    @include type-space(margin-right, .15);
+}

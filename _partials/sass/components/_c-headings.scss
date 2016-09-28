@@ -60,6 +60,17 @@ Moving from `h6` up to `h1`, the heading font sizes get larger on a scale. For i
 	letter-spacing: .5px;
 }
 
+.heading--light {
+	font-family: $secondary-font-stack;
+	font-weight: normal;
+	color: color(type, light);
+}
+
+.heading--underline {
+	@include type-space(padding-bottom, .25);
+	border-bottom: 2px solid;
+}
+
 .bar {
 
 	&:before {

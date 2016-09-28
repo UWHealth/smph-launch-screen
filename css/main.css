@@ -583,9 +583,13 @@ Each easing variable is a cubic-bezier value that specifies rate of change of an
 
 */
 /* SG
-# Config/Typography Settings [[dev]]
+# Config/
 
-@file _config.scss
+## Settings and configuration for all styles.
+
+*/
+/* SG
+# Config/Typography Settings [[dev]]
 
 ##### `$$base-font-size`
 ###### Pixel value
@@ -619,9 +623,7 @@ Determines whether to generate css for paragraphs with a text indent, rather tha
 /* SG
 # Config/Typography Settings [[dev]]
 
-@file _config.scss
-
-##### `$$type-[h#]-size`
+##### `$$type-[]-size`
 ###### List (pixel value [, pixel or unitless value])
 Variables used to generate heading (and small) font-sizes and line-heights. A secondary value will force the line-height to that base-value.
 
@@ -630,16 +632,17 @@ _NOTE: First value must be pixel values(or a function that generates a pixel val
 /* SG
 # Config/Typography Settings [[dev]]
 
-@file _config.scss
-
 ##### `$$primary-font-stack`, `$$secondary-font-stack`, `$$monospace-font-stack`, `$$icon-font-stack`
 ###### String
 Used wherever font-families are declared. Use `null` if nothing exists.
 
+*/
+/* SG
 ##### `$$use-web-fonts`
 ###### Boolean
 Whether to generate `@font-face` values based on `$$font-file-name` (and the other `$font-` variables).
-
+*/
+/* SG
 ##### `$$font-file-name`
 ###### List (string)
 Uses for automatically generated `@font-face` declarations. Describes the filename as well as the font-family name reference. _File names and @font-face values must be the same (e.g. 'opensans' and 'opensans.ttf').**Casing matters**._
@@ -652,6 +655,8 @@ Each parenthesis corresponds to each name in `$$font-file-name`. Determines how 
 ###### List (nested) (boolean)
 Corresponds to each value in `$$font-weights`. (e.g. if `$font-weights: (400,700),(200,400)` and `$font-italics: (true),(false,true)` then the first font will have italics in the 400 and 700 weights while second font will have italics in the 400 weight).
 
+*/
+/* SG
 ##### `$$font-include-woff2`
 ###### Boolean (list)
 Determines whether woff2 formats be included in the `@font-face` generation. Can be a list if each font has different values (not recommended since woff2 is the most performant font-file format).
@@ -659,16 +664,18 @@ Determines whether woff2 formats be included in the `@font-face` generation. Can
 ##### `$$font-include-eot`
 ###### Boolean (list)
 Determines whether to generate `@font-face` values that point at an .eot file. Fallback for IE8.
-
 */
 /* SG
 # Config/Grid Settings [[dev]]
 
-@file _config.scss
-
 ##### `$$max-site-width`
 ###### Pixel value
 Maximum desktop width for the site wrapper.
+
+*/
+/* SG
+
+# Config/Grid Settings [[dev]]
 
 ##### `$$grid-columns`
 ###### Number
@@ -677,6 +684,9 @@ Base number of grid columns to be generated. Note that any column number will in
 ##### `$$grid-gutter`
 ###### Pixel value
 Space between grid items. Also used in `type-space()` for horizontal spacing units.
+
+*/
+/* SG
 
 ##### `$$grid-silent-classes`
 ###### Boolean
@@ -693,6 +703,8 @@ If set to `true`, html must have no white space (or comments) between grid items
 ##### `$$grid-floats`
 ###### Boolean
 If set to `true`, the grid uses floats instead of inline-block for layout.
+*/
+/* SG
 
 ##### `$$breakpoints-has-widths`, `$$breakpoints-has-push`, `$$breakpoints-has-pull`
 ###### List (string)
@@ -727,7 +739,6 @@ $display-classes: ('show':'block');
 //CSS output
 .show { display: block; }
 ```
-
 */
 /* SG
 
@@ -1743,39 +1754,39 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 56px;
-  font-size: 3.5rem;
-  line-height: 1.28571;
+  font-size: 54px;
+  font-size: 3.375rem;
+  line-height: 1.11111;
 }
 
 h2 {
-  font-size: 38px;
-  font-size: 2.375rem;
-  line-height: 1.26316;
+  font-size: 32px;
+  font-size: 2rem;
+  line-height: 1.125;
 }
 
 h3 {
-  font-size: 24px;
-  font-size: 1.5rem;
-  line-height: 1.5;
+  font-size: 28px;
+  font-size: 1.75rem;
+  line-height: 1.28571;
 }
 
 h4 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+h5 {
   font-size: 20px;
   font-size: 1.25rem;
   line-height: 1.2;
 }
 
-h5 {
+h6 {
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 1.33333;
-}
-
-h6 {
-  font-size: 17px;
-  font-size: 1.0625rem;
-  line-height: 1.41176;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1916,20 +1927,123 @@ q:first-child {
 .hero {
   display: table;
   width: 100%;
-  height: 90vh;
+  height: 60vh;
   -webkit-background-size: cover;
           background-size: cover;
-  color: #fff;
   position: relative;
   background-image: url("../images/bg_main.jpg");
-  padding: 18px 0 18px;
-  padding:  1.125rem 0rem 1.125rem;
+  background-position: top center;
 }
 
-.hero_body {
+@media only screen and (max-height: 900px) {
+  .hero {
+    height: 40vh;
+  }
+}
+
+.hero__body {
   display: table-cell;
   vertical-align: middle;
   max-width: 99%;
+  padding: 18px 0 18px;
+  padding:  1.125rem 0rem 1.125rem;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(40, 39, 40, 0.4)), color-stop(60%, transparent));
+  background-image: -webkit-linear-gradient(top, rgba(40, 39, 40, 0.4), transparent 60%);
+  background-image: linear-gradient(to bottom, rgba(40, 39, 40, 0.4), transparent 60%);
+}
+
+@media only screen and (max-height: 900px) {
+  .hero__body {
+    padding:  0.5625rem 0rem 0.5625rem;
+  }
+}
+
+.hero__body:before, .hero__body:after {
+  content: "";
+  height: 100%;
+  width: 60px;
+  -webkit-background-size: 100% auto;
+          background-size: 100% auto;
+  background-position: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.hero__body:before {
+  left: 0;
+  background-image: url("../images/img_waves-left.svg");
+  background-position-x: 0%;
+}
+
+.hero__body:after {
+  right: 0;
+  background-image: url("../images/img_waves-right.svg");
+  background-position-x: 100%;
+}
+
+.hero__head {
+  display: table;
+  height: 30%;
+  width: 100%;
+  vertical-align: top;
+  padding-bottom: 1.5%;
+  padding-top: .5%;
+}
+
+.hero__logo {
+  display: inline-block;
+  text-align: center;
+}
+
+@media only screen and (max-height: 900px) {
+  .hero__logo {
+    max-width: 60px;
+  }
+}
+
+.teirs {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.teir-1 {
+  height: 60vh;
+}
+
+.teir-2 {
+  -webkit-box-flex: 0;
+     -moz-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  vertical-align: middle;
+  padding: 9px 0 9px 30px;
+  padding:  0.5625rem 0rem 0.5625rem 1.875rem;
+}
+
+.teir-3 {
+  min-height: 5vh;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+     -moz-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
 .grid > * {
@@ -2063,6 +2177,135 @@ Grids are built on `inline-block`
   .grid--stack > .grid__item {
     width: 100%;
   }
+}
+
+.w-whole {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.w-half {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
+.w-third {
+  -ms-flex-preferred-size: 33.33233%;
+      flex-basis: 33.33233%;
+}
+
+.w-two-thirds {
+  -ms-flex-preferred-size: 66.66567%;
+      flex-basis: 66.66567%;
+}
+
+.w-three-quarters {
+  -ms-flex-preferred-size: 74.999%;
+      flex-basis: 74.999%;
+}
+
+.w-quarter {
+  -ms-flex-preferred-size: 24.999%;
+      flex-basis: 24.999%;
+}
+
+/* SG
+
+# Layout/Flex Grid
+
+Adding the modifier `--flex` to any grid will give `grid__items` flex-box behavior, meaning all grid items will fill their space as needed. `grid--flex-fit` will force all grid items in that grid to fit in  `grid__item--master` and `grid__item--slave` will create grid items with less or more priority.
+
+
+*/
+.flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+     -moz-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.grid--flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+     -moz-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.grid--flex > .grid__item {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+     -moz-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.grid__item--fit {
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  -webkit-box-flex: 0;
+     -moz-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+}
+
+.grid__item--fill {
+  -webkit-box-flex: 1;
+     -moz-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: .1;
+      flex-shrink: .1;
+}
+
+.grid--flex--column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.grid--flex--fit {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.grid__item--master {
+  -ms-flex-negative: .2;
+      flex-shrink: .2;
+  -webkit-box-flex: .85;
+     -moz-box-flex: .85;
+      -ms-flex-positive: .85;
+          flex-grow: .85;
+}
+
+.grid__item--slave {
+  -webkit-box-flex: .1;
+     -moz-box-flex: .1;
+      -ms-flex-positive: .1;
+          flex-grow: .1;
+  -ms-flex-negative: 2;
+      flex-shrink: 2;
 }
 
 /* SG
@@ -2289,39 +2532,39 @@ Moving from `h6` up to `h1`, the heading font sizes get larger on a scale. For i
 }
 
 .h1 {
-  font-size: 56px;
-  font-size: 3.5rem;
-  line-height: 1.28571;
+  font-size: 54px;
+  font-size: 3.375rem;
+  line-height: 1.11111;
 }
 
 .h2 {
-  font-size: 38px;
-  font-size: 2.375rem;
-  line-height: 1.26316;
+  font-size: 32px;
+  font-size: 2rem;
+  line-height: 1.125;
 }
 
 .h3 {
-  font-size: 24px;
-  font-size: 1.5rem;
-  line-height: 1.5;
+  font-size: 28px;
+  font-size: 1.75rem;
+  line-height: 1.28571;
 }
 
 .h4 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.h5 {
   font-size: 20px;
   font-size: 1.25rem;
   line-height: 1.2;
 }
 
-.h5 {
+.h6 {
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 1.33333;
-}
-
-.h6 {
-  font-size: 17px;
-  font-size: 1.0625rem;
-  line-height: 1.41176;
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -2338,6 +2581,18 @@ Moving from `h6` up to `h1`, the heading font sizes get larger on a scale. For i
   text-align: center;
   text-transform: uppercase;
   letter-spacing: .5px;
+}
+
+.heading--light {
+  font-family: "Vitesse", "Roboto Slab", "Rockwell", "Cambria", "Lucida Bright", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  color: #8e8e92;
+}
+
+.heading--underline {
+  padding-bottom: 4.5px;
+  padding-bottom:  0.28125rem;
+  border-bottom: 2px solid;
 }
 
 .bar:before {
@@ -2638,10 +2893,168 @@ Also useful as a modifier class since it can be used on any container with ancho
   }
 }
 
+.panels {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.panel {
+  padding: 18px 27px;
+  padding:  1.125rem 1.6875rem;
+  position: relative;
+  -webkit-box-flex: 1;
+     -moz-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+@media only screen and (max-width: 640px) {
+  .panel {
+    padding:  0.5625rem 0.84375rem;
+  }
+}
+
+.panel--white {
+  background-color: #fff;
+  color: #c5050c !important;
+}
+
+.panel--red {
+  background-color: #c5050c;
+  background-image: url("../images/dust-overlay.png");
+  background-repeat: repeat;
+  color: #fff !important;
+}
+
+.panel--dust-2 {
+  background-image: url("../images/dust-overlay-2.png");
+}
+
+.panel--elevated {
+  -webkit-box-shadow: 0 3px 26px 4px rgba(98, 59, 61, 0.4);
+     -moz-box-shadow: 0 3px 26px 4px rgba(98, 59, 61, 0.4);
+          box-shadow: 0 3px 26px 4px rgba(98, 59, 61, 0.4);
+  z-index: 1;
+}
+
+.panel--link {
+  display: block;
+  top: 0;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.panel--link:hover,
+.panel--link:focus {
+  text-decoration: none;
+  -webkit-transform: translateY(-1px);
+     -moz-transform: translateY(-1px);
+      -ms-transform: translateY(-1px);
+          transform: translateY(-1px);
+  -webkit-box-shadow: 0 15px 26px -3px rgba(98, 59, 61, 0.5), 0 3px 25px -25px rgba(73, 73, 73, 0.5), 0 3px 10px 2px rgba(73, 73, 73, 0.3);
+     -moz-box-shadow: 0 15px 26px -3px rgba(98, 59, 61, 0.5), 0 3px 25px -25px rgba(73, 73, 73, 0.5), 0 3px 10px 2px rgba(73, 73, 73, 0.3);
+          box-shadow: 0 15px 26px -3px rgba(98, 59, 61, 0.5), 0 3px 25px -25px rgba(73, 73, 73, 0.5), 0 3px 10px 2px rgba(73, 73, 73, 0.3);
+}
+
+.panel--flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.panel__head {
+  text-transform: uppercase;
+  margin-bottom: 72px;
+  margin-bottom:  4.5rem;
+  margin-bottom: 6vh;
+}
+
+@media only screen and (max-width: 640px) {
+  .panel__head {
+    font-size: 5vw;
+  }
+}
+
+.panel__cta {
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-family: "Vitesse", "Roboto Slab", "Rockwell", "Cambria", "Lucida Bright", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: italic;
+}
+
+@media only screen and (max-width: 640px) {
+  .panel__cta {
+    word-break: break-all;
+    font-size: 1rem;
+  }
+}
+
+.panel__cta:after {
+  content: "\00a0\00BB";
+}
+
+.panel:hover .panel__cta {
+  text-decoration: underline;
+}
+
+.slider {
+  overflow-x: hidden;
+}
+
+.slick-slide {
+  display: inline-block;
+}
+
+.panel--slide {
+  margin-right: 4.5px;
+  margin-right:  0.28125rem;
+}
+
 .editor_content ul {
   list-style: bulleted;
   margin-left: 30px;
   margin-left:  1.875rem;
+}
+
+.txt-center {
+  text-align: center !important;
+}
+
+.txt-left {
+  text-align: left !important;
+}
+
+.txt-right {
+  text-align: right !important;
+}
+
+.txt-upper {
+  text-transform: uppercase;
 }
 
 .list_naked {

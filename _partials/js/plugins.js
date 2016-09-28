@@ -1,16 +1,7 @@
 "use strict";
 
-//= include "_jquerySelectors.js"
-//= include "vendor/velocity.js"
-//= include "vendor/velocity.ui.js"
 //= include "vendor/slick.js"
 //= include "vendor/_mousetrap.js"
-//= include "vendor/stackblur.js"
-//= include "vendor/imageblur.js"
-//= include "_tables.js"
-//= include "_colors.js"
-//= include "_tabs.js"
-//= include "_toggle.js"
 
 // Avoid `console` errors in browsers that lack a console.
 
@@ -38,13 +29,14 @@
 
 //Add keyboard shortcut for handling baseline debug class
 (function(){
+    /* globals Mousetrap */
     Mousetrap.bind('ctrl+g', function(){
         if (document.body.className.indexOf('baseline-on') < 0) {
             document.body.className+=' baseline-on';
         }else {
             document.body.className = document.body.className.replace('baseline-on', '');
         }
-    })
+    });
 }());
 
 // Place any jQuery/helper plugins in here.

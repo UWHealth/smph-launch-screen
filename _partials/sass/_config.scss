@@ -1,7 +1,12 @@
 /* SG
-# Config/Typography Settings [[dev]]
+# Config/
 
-@file _config.scss
+## Settings and configuration for all styles.
+
+*/
+
+/* SG
+# Config/Typography Settings [[dev]]
 
 ##### `$$base-font-size`
 ###### Pixel value
@@ -35,7 +40,7 @@ Determines whether to generate css for paragraphs with a text indent, rather tha
 
 $base-font-size:            16px;
 $base-line-height:          24px;
-$font-looseness: 			15%;
+$font-looseness: 			10%;
 $auto-scale-type:           false;
 $scale-ratio:               1.35;
 $vertical-space:			18px;
@@ -49,57 +54,30 @@ $indented-paragraphs:       false;
 /* SG
 # Config/Typography Settings [[dev]]
 
-@file _config.scss
-
-##### `$$type-[h#]-size`
+##### `$$type-[]-size`
 ###### List (pixel value [, pixel or unitless value])
 Variables used to generate heading (and small) font-sizes and line-heights. A secondary value will force the line-height to that base-value.
 
 _NOTE: First value must be pixel values(or a function that generates a pixel value like `modular-scale()`), but the optional secondary value can be unitless._
 */
 
-
-$type-h1-size:           56px;
-$type-h2-size:           38px;
-$type-h3-size:           24px;
-$type-h4-size:           20px;
-$type-h5-size:           18px;
-$type-h6-size:           17px;
+$type-h1-size:           54px;
+$type-h2-size:           32px;
+$type-h3-size:           28px;
+$type-h4-size:           24px;
+$type-h5-size:           20px;
+$type-h6-size:           18px;
 $type-small-size: 		 14px;
+
+
 
 
 /* SG
 # Config/Typography Settings [[dev]]
 
-@file _config.scss
-
 ##### `$$primary-font-stack`, `$$secondary-font-stack`, `$$monospace-font-stack`, `$$icon-font-stack`
 ###### String
 Used wherever font-families are declared. Use `null` if nothing exists.
-
-##### `$$use-web-fonts`
-###### Boolean
-Whether to generate `@font-face` values based on `$$font-file-name` (and the other `$font-` variables).
-
-##### `$$font-file-name`
-###### List (string)
-Uses for automatically generated `@font-face` declarations. Describes the filename as well as the font-family name reference. _File names and @font-face values must be the same (e.g. 'opensans' and 'opensans.ttf').**Casing matters**._
-
-##### `$$font-weights`
-###### List (nested)
-Each parenthesis corresponds to each name in `$$font-file-name`. Determines how many `@font-face` weights are generated per font.
-
-##### `$$font-italics`
-###### List (nested) (boolean)
-Corresponds to each value in `$$font-weights`. (e.g. if `$font-weights: (400,700),(200,400)` and `$font-italics: (true),(false,true)` then the first font will have italics in the 400 and 700 weights while second font will have italics in the 400 weight).
-
-##### `$$font-include-woff2`
-###### Boolean (list)
-Determines whether woff2 formats be included in the `@font-face` generation. Can be a list if each font has different values (not recommended since woff2 is the most performant font-file format).
-
-##### `$$font-include-eot`
-###### Boolean (list)
-Determines whether to generate `@font-face` values that point at an .eot file. Fallback for IE8.
 
 */
 
@@ -112,13 +90,49 @@ $monospace-font-stack: 		"Consolas", "Roboto Mono", "Lucida Console", "Andale Mo
 
 $icon-font-stack:       null;
 
-//Custom web fonts
+
+
+
+/* SG
+##### `$$use-web-fonts`
+###### Boolean
+Whether to generate `@font-face` values based on `$$font-file-name` (and the other `$font-` variables).
+*/
+
 $use-web-fonts: 		false;
+
+
+/* SG
+##### `$$font-file-name`
+###### List (string)
+Uses for automatically generated `@font-face` declarations. Describes the filename as well as the font-family name reference. _File names and @font-face values must be the same (e.g. 'opensans' and 'opensans.ttf').**Casing matters**._
+
+##### `$$font-weights`
+###### List (nested)
+Each parenthesis corresponds to each name in `$$font-file-name`. Determines how many `@font-face` weights are generated per font.
+
+##### `$$font-italics`
+###### List (nested) (boolean)
+Corresponds to each value in `$$font-weights`. (e.g. if `$font-weights: (400,700),(200,400)` and `$font-italics: (true),(false,true)` then the first font will have italics in the 400 and 700 weights while second font will have italics in the 400 weight).
+
+*/
+
 
 $font-file-location: 	null;
 $font-file-name:        null;
 $font-weights:         	null;
 $font-italics:          null;
+
+
+/* SG
+##### `$$font-include-woff2`
+###### Boolean (list)
+Determines whether woff2 formats be included in the `@font-face` generation. Can be a list if each font has different values (not recommended since woff2 is the most performant font-file format).
+
+##### `$$font-include-eot`
+###### Boolean (list)
+Determines whether to generate `@font-face` values that point at an .eot file. Fallback for IE8.
+*/
 
 $font-include-woff2:    null;
 $font-include-eot: 		true;
@@ -128,11 +142,19 @@ $font-include-eot: 		true;
 /* SG
 # Config/Grid Settings [[dev]]
 
-@file _config.scss
-
 ##### `$$max-site-width`
 ###### Pixel value
 Maximum desktop width for the site wrapper.
+
+*/
+
+$max-site-width:        1240px;
+
+
+
+/* SG
+
+# Config/Grid Settings [[dev]]
 
 ##### `$$grid-columns`
 ###### Number
@@ -141,6 +163,15 @@ Base number of grid columns to be generated. Note that any column number will in
 ##### `$$grid-gutter`
 ###### Pixel value
 Space between grid items. Also used in `type-space()` for horizontal spacing units.
+
+*/
+
+$grid-columns:          12;
+
+$grid-gutter:           30px;
+
+
+/* SG
 
 ##### `$$grid-silent-classes`
 ###### Boolean
@@ -157,6 +188,20 @@ If set to `true`, html must have no white space (or comments) between grid items
 ##### `$$grid-floats`
 ###### Boolean
 If set to `true`, the grid uses floats instead of inline-block for layout.
+*/
+
+$grid-silent-classes:	true;
+
+$grid-push:             true;
+$grid-pull:             true;
+
+$grid-markup-fix:        false;
+$grid-floats:            false;
+
+
+
+
+/* SG
 
 ##### `$$breakpoints-has-widths`, `$$breakpoints-has-push`, `$$breakpoints-has-pull`
 ###### List (string)
@@ -164,20 +209,10 @@ Determines what classes (widths, pushes, pulls) get generated at `$$breakpoints`
 
 */
 
-$max-site-width:        1240px;
-
-$grid-columns:          12;
-$grid-gutter:           30px;
-$grid-silent-classes:	true;
-$grid-push:             true;
-$grid-pull:             true;
-
-$grid-markup-fix:        false;
-$grid-floats:            false;
-
 $breakpoint-has-widths: ('smalls', 'small', 'smallish', 'bigs', 'lap', 'desk');
 $breakpoint-has-push:   ('smalls', 'small', 'smallish', 'bigs', 'lap', 'desk');
 $breakpoint-has-pull:   ('smalls', 'small', 'smallish', 'bigs', 'lap', 'desk');
+
 
 
 /* SG
@@ -212,6 +247,7 @@ $breakpoints: (
 );
 
 
+
 /* SG
 ##### `$$display-classes`
 ###### Map (string: string)
@@ -225,7 +261,6 @@ $display-classes: ('show':'block');
 //CSS output
 .show { display: block; }
 ```
-
 */
 
 $display-classes: (
@@ -234,6 +269,7 @@ $display-classes: (
 	'ibl': inline-block,
 	'hide': none
 );
+
 
 
 /* SG
@@ -279,6 +315,7 @@ $spacing-classes: (
 	names: ('0','', 'half', 'neg', '2'),
 	prefixes: ('space', 'pad')
 );
+
 
 
 /* SG
@@ -365,6 +402,7 @@ $base-colors: generate-color-variations(
 		5%,   20%,   65%
 	)
 )  !global;
+
 
 
 /* SG

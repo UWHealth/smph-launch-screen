@@ -1,43 +1,29 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if IE 9]>         <html class="no-js ie9"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="description" content="">
+    <meta name="description" content="SMPH Launch Screen">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!--Standard favicons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#c60a14">
 
-    <link rel="icon" type="image/png" href="/favicons/favicon-196x196.png" sizes="196x196">
-    <link rel="icon" type="image/png" href="/favicons/favicon-160x160.png" sizes="160x160">
-    <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
-    <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
-    <!--Win 8 IE 10/11 references-->
-    <meta name="application-name" content="ehealth frontend"/>
-    <meta name="msapplication-navbutton-color" content="#f52b61" />
-    <meta name="msapplication-TileColor" content="#f52b61">
-    <meta name="msapplication-TileImage" content="favicon/mstile-144x144.png">
+    <title>School of Medicine and Public Health</title>
 
-    <title>e-Health Frontend Framework</title>
-
-    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-    <link rel="stylesheet" href="css/main.css" media="screen">
+    <link rel="stylesheet" href="css/main.min.css" media="screen">
     <link rel="stylesheet" href="css/print.css" media="print">
 
 </head>
 <body>
-    
 <svg aria-hidden="true" style="display: inline; height: 0; position: absolute;" xmlns:xlink="http://www.w3.org/1999/xlink">
   <title id="title">Site icons</title>
   <defs>
@@ -380,34 +366,72 @@
   </defs>
 </svg>
 
-<header class="hero" role="banner">
-        <div class="hero_body">
-            <div class="wrap">
-                <!-- <svg role="img" class="bar bar--large" aria-labelledby="header-fill-title" width="100%" height="90">
-                    <title id="header-fill-title">heading</title>
-                    <text x="50%" y="1em" text-anchor="middle" class="h1" alignment-baseline="middle" fill="url(#pattern) #000">SMPH LAUNCH SCREEN</text>
-                </svg> -->
-                <h1 class="bar bar--large" style="color:#fff">SMPH Launch Screen</h1>
+<div class="teirs">
+<header class="hero teir-1" role="banner">
+    <div class="hero__body">
+        <div class="hero__head txt-center">
+
+            <img src="images/logo_crest.svg" class="hero__logo" width="88" aria-hidden="true">
+        </div>
+        <div class="wrap smalls_pad_t_0">
+            <!-- <svg role="img" class="bar bar--large" aria-labelledby="header-fill-title" width="100%" height="90">
+                <title id="header-fill-title">heading</title>
+                <text x="50%" y="1em" text-anchor="middle" class="h1" alignment-baseline="middle" fill="url(#pattern) #000">SMPH LAUNCH SCREEN</text>
+            </svg> -->
+            <div class="panels grid grid--flex grid--wide smalls_space_0">
+                <div class="w-third grid__item grid__item--slave smalls_pad_l_0">
+                    <a class="panel panel--flex panel--white panel--elevated panel--link" href="http://www.wisc.edu">
+                        <h1 class="panel__head bar bar--large  h2">University of Wisconsin-Madison</h1>
+                        <p class="panel__cta">wisc.edu</p>
+                    </a>
+                </div>
+                <div class="w-half grid__item grid__item--master smalls_pad_l_half">
+                    <a class="panel panel--flex panel--red panel--elevated panel--link" href="http://med.wisc.edu">
+                        <h1 class="panel__head bar bar--large h2">School of Medicine <br>&amp; Public Health</h1>
+                        <p class="panel__cta">med.wisc.edu</p>
+                    </a>
+                </div>
             </div>
+
         </div>
     </div>
 </header>
+<section class="teir teir-2 pad_l">
+    <h2 class="heading--light heading--underline h6 txt-upper">For Faculty and Staff</h2>
+    <div class="panels grid grid--flex grid--narrow">
+        <div class="grid__item w-third grid__item--slave">
+            <a class="panel panel--flex panel--red panel--link"  href="http://intranet.med.wisc.edu">
+                <h2 class="panel__head bar bar--large h3">SMPH Intranet</h2>
+                <p class="panel__cta">intranet.med.wisc.edu</p>
+            </a>
+        </div>
+        <div class="grid__item w-two-thirds grid__item--master">
+            <div class="w-whole">
+                <div class="slider">
+                    <div class="panel panel--white panel--slide"><h3>1</h3></div>
+                    <div class="panel panel--white panel--slide"><h3>2</h3></div>
+                    <div class="panel panel--white panel--slide"><h3>3</h3></div>
+                    <div class="panel panel--white panel--slide"><h3>4</h3></div>
+                    <div class="panel panel--white panel--slide"><h3>5</h3></div>
+                    <div class="panel panel--white panel--slide"><h3>6</h3></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<nav class="pad_v_half space_b_0" role="navigation" style="background-color: #fff" >
+<section class="teir-3 pad_v_half space_b_0" role="navigation" style="background-color: #fff" >
     <div class="wrap pad_v_0">
         <div class="arrange space_b_0">
             <div class="arrange__fill">
-                <ul class="list--inline list--nav h6 space_b_0 pad_l_half">
+                <ul class="list--inline list--nav space_b_0 pad_l_half">
                     <li><a href="styleguide">Style Guide</a></li>
                     <li class="bigs_align_right"><a class="btn" id="js_baseline_toggle" href="#">Toggle Baseline</a></li>
                 </ul>
             </div>
         </div>
     </div>
-</nav>
-
-
-<div class="wrap space_t">
+</section>
 </div>
 
 <footer role="contentinfo">
@@ -449,47 +473,30 @@
         Custom Scripts
 ============================-->
         <script>
-           $(function() {
-               var test_height = function(element){
-                   var el_height = element.scrollHeight || element[0].scrollHeight;
-                   return el_height;
-               };
-               var test_height_parent = function(element){
-                   var el_height = element.parentNode.scrollHeight;
-                   return el_height;
-               };
+        $(".slider").slick({
 
-               $("#tabs_test1").tabbed({
-                   wrapper: {
-                       class_string: "tabbed"
-                   },
-                   tabs: {
-                       begin: function(elements) {
-                           var $target = $(elements[1]);
-                           if(! $target.is(":visible")) {
-							   $target.siblings('.tab_active').velocity('slideUp', {opacity: [0, 'easeOutExpo', 1]}, 30);
-                               $target.velocity('slideDown', {opacity: [1, 0]}, 30);
-						   }else {
-							   $target.velocity('slideUp', {opacity: [0, 'easeInExpo', 1]}, 30);
-						   }
-                       },
-                       toggle: false,
-                       animation: {
-                           duration: 50
-                       }
-                   }
-			   }, function(scope, parents){
-				   parents.find('.tab_active').velocity('slideDown', 20);
-			   });
+            // normal options...
+            infinite: false,
+            slidesToShow: 4,
+            slidesToScroll: 1,
 
-           //Helper for hiding/showing baseline-grid
-               $('#js_baseline_toggle').click(function(e){
-                   e.preventDefault();
-                   var toggles = $(this).attr("id");
-                   $('body').toggleClass('baseline-on');
-                   e.preventDefault();
-               });
-           });
+            // the magic
+            responsive: [{
+
+               breakpoint: 1024,
+               settings: {
+                 slidesToShow: 4,
+                 infinite: false
+               }
+
+            },
+           {
+
+               breakpoint: 640,
+               settings: "unslick" // destroys slick
+
+             }]
+            });
 
        </script>
 </footer>

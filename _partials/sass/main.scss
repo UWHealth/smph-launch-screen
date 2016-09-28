@@ -90,6 +90,7 @@ Sass files are imported in order from lowest specificity to highest.
 @import 'components/c-headings';
 @import 'components/c-lists';
 @import 'components/c-tables';
+@import 'components/c-panels';
 
 //vendor components
 @import 'components/vendor/slick'; //Slider import
@@ -102,5 +103,6 @@ Sass files are imported in order from lowest specificity to highest.
 //High-specificity css and overrides classes (usually have !important).
 // Typically single-use classes
 @import 'overrides/ov-polyfills';
+@import 'overrides/ov-type';
 @import 'overrides/ov-overrides';
 @import 'overrides/ov-debug';
