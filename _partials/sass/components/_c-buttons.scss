@@ -33,13 +33,16 @@ Applying the `btn` class to anything will make it look like a button. Always dec
     &:focus {
         text-decoration: none;
         box-shadow: 0 1.5px 4px rgba(black,.24),
-            0 1.5px 6px rgba(black,.12);
+            0 1.5px 6px rgba(black,.12),
+            0 6px 12px rgba(black,.23),
+            0 10px 40px rgba(black,.19);
         color: #fff;
     }
 
     &:active {
         box-shadow: 0 0 4px 1px rgba(color('links','light'), .3);
         outline: none;
+        background-color: color(badgers, dark);
     }
 
 }

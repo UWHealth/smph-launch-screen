@@ -1,0 +1,87 @@
+//Launch screen-specific styles
+
+.launch-screen {
+
+    @include mq('max-height' 800px) {
+
+        .hero {
+            .panel__head {
+                @include font-size($type-h3-size, $h3-lh);
+
+                @include mq('small') {
+                    font-size: 5vw;
+                }
+            }
+        }
+
+        .panel__cta {
+            @include font-size($type-small-size, $small-lh);
+            margin-bottom: 0;
+        }
+
+        .panel__head--bottom {
+            margin-bottom: 0;
+        }
+
+        .panel {
+            @include type-space(padding, .5 .45);
+        }
+
+        .panel--slide {
+            @include type-space(padding, .5 .45);
+        }
+
+        .bar {
+            margin-top: 2.5vh;
+
+            &:before {
+                font-size: 6px;
+                top: -1.75vh;
+            }
+        }
+    }
+
+    @include mq('max-width' 640px) {
+
+        .slider {
+            margin-left: -2%;
+        }
+
+        .slider:after {
+            content: " ";
+            display: table;
+            clear: both;
+            height: 1px;
+        }
+
+        .panel--slide {
+            width: 48%;
+            margin: 2% 0 2% 2%;
+            @include type-space(height, 6);
+            float: left;
+        }
+
+        .panel__head--bottom {
+            position: relative;
+        }
+    }
+}
+
+.panel--slide {
+    display: inline-block;
+    @include type-space(margin-right, .15);
+    vertical-align: bottom;
+    outline: none;
+
+    &:hover,
+    &:focus {
+        box-shadow:0 1px 10px -9px rgba(color(type), .25),
+            0 1px 2px 1px rgba(color(type), .13);
+    }
+
+    &:active {
+        box-shadow:0 1px 6px -5px rgba(color(type), .25),
+            0 0 1px 1px rgba(color(type), .13);
+        background-color: mix(color(bg, light), color(badgers, light), 98%);
+    }
+}

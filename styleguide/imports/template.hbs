@@ -30,7 +30,7 @@
     <h1 class="sg-logo">
         <a href="#" class="sg-menu_link js-menu_showall">SMPH</a>
     </h1>
-    <div id="sg-menu_wrap" class="txt-small"></div>
+    <div id="sg-menu_wrap"></div>
 </nav>
 
 <main id="sg-main" class="sg-main">
@@ -98,58 +98,61 @@
 <script>
     {{> toc}};
 
-    $('#sg-menu_wrap').toc({
-        'selectors': '.sg-heading-section,.sg-heading-category,.sg-heading-article', //elements to use as headings
-        'container': '#sg-main', //element to find all selectors in
-        'smoothScrolling': function(target, options, callback) { //enable or disable smooth scrolling on click
-            $(target).smoothScroller({
-              offset: 35,
-              speed: 10
-            }).on('smoothScrollerComplete', function() {
-              callback();
-            });
-        },
-        'listType': '<ul class="sg-menu_list"></ul>',
-        'prefix': 'sg', //prefix for anchor tags and class names
-        'onHighlight': function(el) { //called when a new section is highlighted
-            var $el = $(el);
-            $el.closest('.sg-menu_category').addClass('sg-category-active')
-            $('.sg-category-active').not($el.closest('.sg-menu_category')).removeClass('sg-category-active');
-            expandCategory($el);
-        },
-        'activeClass': 'sg-toc-active',
-        'highlightOnScroll': true, //add class to heading that is currently in focus
-        'highlightOffset': 50, //offset to trigger the next headline
-        'headerText': function(i, heading, $heading) { //custom function building the header-item text
-            return $heading.text();
-        },
-        'itemClass': function(i, heading, $heading, prefix) { // custom function for item class
-            //List items class="sg-menu_[section,category,article] sg-menu_item"
-            return $heading.attr('class').replace('sg-heading-', 'sg-menu_').replace('sg-heading ', ' ') + ' sg-menu_item';
+        $(function(){
+            $('#sg-menu_wrap').toc({
+            'selectors': '.sg-heading-section,.sg-heading-category,.sg-heading-article', //elements to use as headings
+            'container': '#sg-main', //element to find all selectors in
+            'smoothScrolling': function(target, options, callback) { //enable or disable smooth scrolling on click
+                $(target).smoothScroller({
+                  offset: 35,
+                  speed: 10
+                }).on('smoothScrollerComplete', function() {
+                  callback();
+                });
+            },
+            'listType': '<ul class="sg-menu_list"></ul>',
+            'prefix': 'sg', //prefix for anchor tags and class names
+            'onHighlight': function(el) { //called when a new section is highlighted
+                var $el = $(el);
+                $el.closest('.sg-menu_category').addClass('sg-category-active')
+                $('.sg-category-active').not($el.closest('.sg-menu_category')).removeClass('sg-category-active');
+                expandCategory($el);
+            },
+            'activeClass': 'sg-toc-active',
+            'highlightOnScroll': true, //add class to heading that is currently in focus
+            'highlightOffset': 50, //offset to trigger the next headline
+            'headerText': function(i, heading, $heading) { //custom function building the header-item text
+                return $heading.text();
+            },
+            'itemClass': function(i, heading, $heading, prefix) { // custom function for item class
+                //List items class="sg-menu_[section,category,article] sg-menu_item"
+                return $heading.attr('class').replace('sg-heading-', 'sg-menu_').replace('sg-heading ', ' ') + ' sg-menu_item';
+            }
+        });
+
+
+        function expandCategory($el) {
+            if($el.hasClass('sg-menu_category')){
+                $('.sg-category-active').removeClass('sg-category-active');
+                $el.addClass('sg-category-active');
+            }
         }
-    });
 
-    function expandCategory($el) {
-        if($el.hasClass('sg-menu_category')){
-            $('.sg-category-active').removeClass('sg-category-active');
-            $el.addClass('sg-category-active');
-        }
-    }
+        $("#sg-menu_wrap").find('a').addClass('sg-menu_link').on('click', function(el){
+            expandCategory($(el));
+        });
 
-    $("#sg-menu_wrap").find('a').addClass('sg-menu_link').on('click', function(el){
-        expandCategory($(el));
-    });
+        $('.sg-menu_article').each(function(i, el){
+            var category = $(el).prevAll('.sg-menu_category')[0];
+            $(el).appendTo(category);
+        });
 
-    $('.sg-menu_article').each(function(i, el){
-        var category = $(el).prevAll('.sg-menu_category')[0];
-        $(el).appendTo(category);
-    });
-
-    $('.sg-menu_category').each(function(i, el){
-        var section = $(el).prevAll('.sg-menu_section')[0];
-        $(el).appendTo(section);
-    }).each(function(i, el){
-        $(this).find('.sg-menu_article').wrapAll('<ul class="sg-menu_list"></ul>');
+        $('.sg-menu_category').each(function(i, el){
+            var section = $(el).prevAll('.sg-menu_section')[0];
+            $(el).appendTo(section);
+        }).each(function(i, el){
+            $(this).find('.sg-menu_article').wrapAll('<ul class="sg-menu_list"></ul>');
+        });
     });
 </script>
 

@@ -71,8 +71,12 @@ $hero-mq: 'max-height' 900px;
 	height: 30%;
 	width: 100%;
 	vertical-align: top;
-	padding-bottom: 1.5%;
-	padding-top: .5%;
+	padding-bottom: 3.5%;
+	padding-top: 1.5%;
+
+	@include mq($hero-mq) {
+		padding-bottom: .5%
+	}
 }
 
 .hero__logo {
@@ -81,6 +85,10 @@ $hero-mq: 'max-height' 900px;
 
 	@include mq($hero-mq) {
 		max-width: 60px;
+	}
+
+	@include mq(smalls) {
+		max-width: 55px;
 	}
 }
 
@@ -92,17 +100,24 @@ $hero-mq: 'max-height' 900px;
 }
 
 .teir-1 {
-	height: 60vh;
+	height: auto;
+	min-height: 60vh;
+	flex: 0 1 auto;
+
+	@include mq($hero-mq) {
+		min-height: 45vh;
+	}
 }
 
 .teir-2 {
-	flex: 0 0 auto;
+	flex: 0 1 auto;
 	vertical-align: middle;
-	@include type-space(padding, .5 0 .5 1);
+	@include type-space(padding, 1 0 1 1);
 }
 
 .teir-3 {
 	min-height: 5vh;
 	display: flex;
 	flex: 0 0 auto;
+	justify-self: flex-end;
 }

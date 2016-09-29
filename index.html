@@ -366,7 +366,7 @@
   </defs>
 </svg>
 
-<div class="teirs">
+<div class="teirs launch-screen">
 <header class="hero teir-1" role="banner">
     <div class="hero__body">
         <div class="hero__head txt-center">
@@ -396,24 +396,33 @@
         </div>
     </div>
 </header>
-<section class="teir teir-2 pad_l">
+<section class="teir teir-2 pad_l smalls_pad_half">
     <h2 class="heading--light heading--underline h6 txt-upper">For Faculty and Staff</h2>
-    <div class="panels grid grid--flex grid--narrow">
-        <div class="grid__item w-third grid__item--slave">
-            <a class="panel panel--flex panel--red panel--link"  href="http://intranet.med.wisc.edu">
+    <div class="panels grid grid--flex grid--full grid--stack">
+        <div class="grid__item w-third">
+            <a class="panel panel--flex panel--red panel--link panel--dust-2"  href="http://intranet.med.wisc.edu">
                 <h2 class="panel__head bar bar--large h3">SMPH Intranet</h2>
                 <p class="panel__cta">intranet.med.wisc.edu</p>
             </a>
         </div>
-        <div class="grid__item w-two-thirds grid__item--master">
-            <div class="w-whole">
-                <div class="slider">
-                    <div class="panel panel--white panel--slide"><h3>1</h3></div>
-                    <div class="panel panel--white panel--slide"><h3>2</h3></div>
-                    <div class="panel panel--white panel--slide"><h3>3</h3></div>
-                    <div class="panel panel--white panel--slide"><h3>4</h3></div>
-                    <div class="panel panel--white panel--slide"><h3>5</h3></div>
-                    <div class="panel panel--white panel--slide"><h3>6</h3></div>
+        <div class="grid__item w-two-thirds">
+            <div class="w-whole slider--container">
+                <div id="js-slider" class="slider">
+                    <a href="" class="panel panel--link panel--white panel--slide">
+                        <h3 class="bar bar--mini panel__head panel__head--bottom h6">Human Resources</h3>
+                    </a>
+                    <a href="" class="panel panel--link panel--white panel--slide">
+                        <h3 class="bar bar--mini panel__head panel__head--bottom h6">Policies</h3>
+                    </a>
+                    <a href="" class="panel panel--link panel--white panel--slide">
+                        <h3 class="bar bar--mini panel__head panel__head--bottom h6">Finance</h3>
+                    </a>
+                    <a href="" class="panel panel--link panel--white panel--slide">
+                        <h3 class="bar bar--mini panel__head panel__head--bottom h6">Academic Affairs</h3>
+                    </a>
+                    <a href="" class="panel panel--link panel--white panel--slide">
+                        <h3 class="bar bar--mini panel__head panel__head--bottom h6">Faculty Resources</h3>
+                    </a>
                 </div>
             </div>
         </div>
@@ -473,30 +482,51 @@
         Custom Scripts
 ============================-->
         <script>
-        $(".slider").slick({
-
-            // normal options...
+        $("#js-slider").slick({
             infinite: false,
-            slidesToShow: 4,
-            slidesToScroll: 1,
+            slidesToShow: 5,
+            slidesToScroll: 2,
+            nextArrow: '<button type="button" class="btn slick-button slick-arrow slick-next"><svg class="slick-arrow__icon" role="presentation" aria-labelledby="title"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#uw-symbol-chevron-right"></use></svg>Next</button>',
+            prevArrow: '<button type="button" class="btn slick-button slick-arrow slick-prev"><svg class="slick-arrow__icon" role="presentation" aria-labelledby="title"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#uw-symbol-chevron-left"></use></svg>Previous</button>',
+            appendArrows: $('#js-slider'),
+            edgeFriction: 0.25,
+            speed: 200,
+            responsive: [
+                {
+                    breakpoint: 1400,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 1
+                    }
 
-            // the magic
-            responsive: [{
-
-               breakpoint: 1024,
-               settings: {
-                 slidesToShow: 4,
-                 infinite: false
-               }
-
-            },
-           {
-
-               breakpoint: 640,
-               settings: "unslick" // destroys slick
-
-             }]
-            });
+                },
+                {
+                    breakpoint: 1250,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 960,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+               },
+               {
+                    breakpoint: 780,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+               },
+               {
+                   breakpoint: 640,
+                   settings: "unslick" // destroys slick
+                }
+            ]
+        });
 
        </script>
 </footer>

@@ -54,8 +54,11 @@ Grids are built on `inline-block`
 
 .grid--stack {
     @include mq(smalls){
+        display: block !important;
+
         & > .grid__item {
             width: 100%;
+            flex: 1 0 auto;
         }
     }
 }
@@ -107,7 +110,11 @@ Grids are built on `inline-block`
 
 # Layout/Flex Grid
 
-Adding the modifier `--flex` to any grid will give `grid__items` flex-box behavior, meaning all grid items will fill their space as needed. `grid--flex-fit` will force all grid items in that grid to fit in  `grid__item--master` and `grid__item--slave` will create grid items with less or more priority.
+@priority 2
+
+Adding the modifier `--flex` to any grid will give `grid__items` flex-box behavior, meaning all grid items will fill their space as needed. `grid__item-fit` will force stop the grid item from growing.
+
+`grid__item--master` and `grid__item--slave` will create grid items with less or more priority (based on their content).
 
 
 */

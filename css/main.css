@@ -583,7 +583,7 @@ Each easing variable is a cubic-bezier value that specifies rate of change of an
 
 */
 /* SG
-# Config/
+# Config/ [[dev]]
 
 ## Settings and configuration for all styles.
 
@@ -1596,7 +1596,7 @@ table, p, address, pre {
   transition: all 300ms ease-in-out;
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 730px) {
   .table_scroll,
   .table_pin {
     font-size: 0.875rem;
@@ -1987,8 +1987,14 @@ q:first-child {
   height: 30%;
   width: 100%;
   vertical-align: top;
-  padding-bottom: 1.5%;
-  padding-top: .5%;
+  padding-bottom: 3.5%;
+  padding-top: 1.5%;
+}
+
+@media only screen and (max-height: 900px) {
+  .hero__head {
+    padding-bottom: .5%;
+  }
 }
 
 .hero__logo {
@@ -1999,6 +2005,12 @@ q:first-child {
 @media only screen and (max-height: 900px) {
   .hero__logo {
     max-width: 60px;
+  }
+}
+
+@media only screen and (max-width: 730px) {
+  .hero__logo {
+    max-width: 55px;
   }
 }
 
@@ -2021,17 +2033,28 @@ q:first-child {
 }
 
 .teir-1 {
-  height: 60vh;
+  height: auto;
+  min-height: 60vh;
+  -webkit-box-flex: 0;
+     -moz-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+}
+
+@media only screen and (max-height: 900px) {
+  .teir-1 {
+    min-height: 45vh;
+  }
 }
 
 .teir-2 {
   -webkit-box-flex: 0;
      -moz-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
   vertical-align: middle;
-  padding: 9px 0 9px 30px;
-  padding:  0.5625rem 0rem 0.5625rem 1.875rem;
+  padding: 18px 0 18px 30px;
+  padding:  1.125rem 0rem 1.125rem 1.875rem;
 }
 
 .teir-3 {
@@ -2044,6 +2067,7 @@ q:first-child {
      -moz-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
+  justify-self: flex-end;
 }
 
 .grid > * {
@@ -2127,13 +2151,13 @@ q:first-child {
   width: 49.999%;
 }
 
-@media only screen and (min-width: 481px) and (max-width: 640px) {
+@media only screen and (min-width: 481px) and (max-width: 730px) {
   .wrap {
     width: 91.66567%;
   }
 }
 
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 731px) {
   .wrap {
     width: 89.999%;
   }
@@ -2173,9 +2197,16 @@ Grids are built on `inline-block`
 ```
 
 */
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 730px) {
+  .grid--stack {
+    display: block !important;
+  }
   .grid--stack > .grid__item {
     width: 100%;
+    -webkit-box-flex: 1;
+       -moz-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
   }
 }
 
@@ -2213,7 +2244,11 @@ Grids are built on `inline-block`
 
 # Layout/Flex Grid
 
-Adding the modifier `--flex` to any grid will give `grid__items` flex-box behavior, meaning all grid items will fill their space as needed. `grid--flex-fit` will force all grid items in that grid to fit in  `grid__item--master` and `grid__item--slave` will create grid items with less or more priority.
+@priority 2
+
+Adding the modifier `--flex` to any grid will give `grid__items` flex-box behavior, meaning all grid items will fill their space as needed. `grid__item-fit` will force stop the grid item from growing.
+
+`grid__item--master` and `grid__item--slave` will create grid items with less or more priority (based on their content).
 
 
 */
@@ -2485,9 +2520,9 @@ Applying the `btn` class to anything will make it look like a button. Always dec
 
 .btn:hover, .btn:focus {
   text-decoration: none;
-  -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
-     -moz-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
-          box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12), 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
+     -moz-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12), 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
+          box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12), 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
   color: #fff;
 }
 
@@ -2496,6 +2531,7 @@ Applying the `btn` class to anything will make it look like a button. Always dec
      -moz-box-shadow: 0 0 4px 1px rgba(49, 161, 194, 0.3);
           box-shadow: 0 0 4px 1px rgba(49, 161, 194, 0.3);
   outline: none;
+  background-color: #ac040a;
 }
 
 .btn-reversed {
@@ -2827,7 +2863,7 @@ Also useful as a modifier class since it can be used on any container with ancho
   background-color: rgba(228, 228, 228, 0.75);
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 730px) {
   .table_wrapper, .table_responsive td,
   .table_responsive th {
     overflow: hidden;
@@ -2893,25 +2929,23 @@ Also useful as a modifier class since it can be used on any container with ancho
   }
 }
 
-.panels {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-     -moz-box-orient: horizontal;
-     -moz-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-     -moz-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-}
+/* SG
 
+# Panels/Single
+
+@priority 1
+
+Panels are boxes with a simple header, and an optional call-to-action. They should be used as callouts, and should typically contain a link.
+
+Panels require a modifier tag to gain most of their style (background and text color). `panel--white`, `panel--gray` and `panel--red` are the most common.
+
+```html_example
+<div class="panel panel--red panel--dust">
+    <h2 class="panel__head">A Panel</h2>
+</div>
+```
+
+*/
 .panel {
   padding: 18px 27px;
   padding:  1.125rem 1.6875rem;
@@ -2922,7 +2956,7 @@ Also useful as a modifier class since it can be used on any container with ancho
           flex: 1 1 auto;
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 730px) {
   .panel {
     padding:  0.5625rem 0.84375rem;
   }
@@ -2940,8 +2974,16 @@ Also useful as a modifier class since it can be used on any container with ancho
   color: #fff !important;
 }
 
+.panel--gray {
+  background-color: #E4E4E4;
+}
+
+.panel--gray .panel__head {
+  color: #c5050c;
+}
+
 .panel--dust-2 {
-  background-image: url("../images/dust-overlay-2.png");
+  background-image: url("../images/dust-overlay2.png");
 }
 
 .panel--elevated {
@@ -2965,9 +3007,19 @@ Also useful as a modifier class since it can be used on any container with ancho
      -moz-transform: translateY(-1px);
       -ms-transform: translateY(-1px);
           transform: translateY(-1px);
-  -webkit-box-shadow: 0 15px 26px -3px rgba(98, 59, 61, 0.5), 0 3px 25px -25px rgba(73, 73, 73, 0.5), 0 3px 10px 2px rgba(73, 73, 73, 0.3);
-     -moz-box-shadow: 0 15px 26px -3px rgba(98, 59, 61, 0.5), 0 3px 25px -25px rgba(73, 73, 73, 0.5), 0 3px 10px 2px rgba(73, 73, 73, 0.3);
-          box-shadow: 0 15px 26px -3px rgba(98, 59, 61, 0.5), 0 3px 25px -25px rgba(73, 73, 73, 0.5), 0 3px 10px 2px rgba(73, 73, 73, 0.3);
+  -webkit-box-shadow: 0 15px 26px -3px rgba(98, 59, 61, 0.25), 0 3px 25px -25px rgba(73, 73, 73, 0.25), 0 3px 10px 2px rgba(73, 73, 73, 0.13);
+     -moz-box-shadow: 0 15px 26px -3px rgba(98, 59, 61, 0.25), 0 3px 25px -25px rgba(73, 73, 73, 0.25), 0 3px 10px 2px rgba(73, 73, 73, 0.13);
+          box-shadow: 0 15px 26px -3px rgba(98, 59, 61, 0.25), 0 3px 25px -25px rgba(73, 73, 73, 0.25), 0 3px 10px 2px rgba(73, 73, 73, 0.13);
+}
+
+.panel--link:active {
+  -webkit-transform: translateY(0);
+     -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-box-shadow: 0 1px 26px -25px rgba(98, 59, 61, 0.25), 0 2px 25px -25px rgba(73, 73, 73, 0.25), 0 1px 10px 2px rgba(73, 73, 73, 0.13);
+     -moz-box-shadow: 0 1px 26px -25px rgba(98, 59, 61, 0.25), 0 2px 25px -25px rgba(73, 73, 73, 0.25), 0 1px 10px 2px rgba(73, 73, 73, 0.13);
+          box-shadow: 0 1px 26px -25px rgba(98, 59, 61, 0.25), 0 2px 25px -25px rgba(73, 73, 73, 0.25), 0 1px 10px 2px rgba(73, 73, 73, 0.13);
 }
 
 .panel--flex {
@@ -2991,25 +3043,44 @@ Also useful as a modifier class since it can be used on any container with ancho
   text-transform: uppercase;
   margin-bottom: 72px;
   margin-bottom:  4.5rem;
-  margin-bottom: 6vh;
+  margin-bottom: 5.5vh;
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 730px) {
   .panel__head {
-    font-size: 5vw;
+    font-size: 4.5vw;
   }
 }
 
+.panel__head--bottom {
+  position: absolute;
+  bottom: 1rem;
+  margin-bottom: 18px;
+  margin-bottom:  1.125rem;
+  padding-right: 8%;
+}
+
+/* SG
+
+Calls to action will receive special styling and a chevron after their content. Adding `panel--link` to the panel itself will cause the panel to react to hover events.
+
+```html_example
+<a class="panel panel--link panel--white" href="#">
+    <h3 class="panel__head bar bar--large">A Panel with CTA</h3>
+    <p class="panel__cta">Check it out</p>
+</a>
+```
+*/
 .panel__cta {
   font-size: 20px;
   font-size: 1.25rem;
   font-family: "Vitesse", "Roboto Slab", "Rockwell", "Cambria", "Lucida Bright", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: italic;
+  word-break: break-all;
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 730px) {
   .panel__cta {
-    word-break: break-all;
     font-size: 1rem;
   }
 }
@@ -3018,27 +3089,241 @@ Also useful as a modifier class since it can be used on any container with ancho
   content: "\00a0\00BB";
 }
 
-.panel:hover .panel__cta {
+.panel:hover .panel__cta, .panel__cta:hover {
   text-decoration: underline;
 }
 
-.slider {
-  overflow-x: hidden;
+/* SG
+# Panels/Groups
+
+Panels can be grouped together by wrapping them in a `panels` class. This will cause them to align in a row, with equal heights.
+
+Adding `panel--flex` to any children will force any call-to-actions to the bottom of the parent panel.
+
+```html_example
+<div class="panels">
+    <div class="panel panel--flex panel--red">
+        <h4 class="panel__head bar bar--large">Panel</h4>
+        <p class="panel__cta">CTA (bottom-aligned)</p>
+    </div>
+    <div class="panel panel--white">
+        <h5 class="panel__head bar bar--mini">Panel</h5>
+        <p class="panel__cta txt-small">CTA</p>
+    </div>
+    <div class="panel panel--flex panel--gray">
+        <h4 class="panel__head bar bar--large">Panel with longer title</h4>
+        <p class="panel__cta">Call to action</p>
+    </div>
+    <div class="panel panel--flex panel--white">
+        <h4 class="panel__head bar bar--large">Another Panel</h4>
+        <p class="panel__cta">Call to action</p>
+    </div>
+    <div class="panel panel--red">
+        <h4 class="panel__head bar bar--large">Panel</h4>
+        <p class="panel__cta">Call to action</p>
+    </div>
+
+</div>
+
+```
+
+*/
+.panels {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: stretch;
+     -moz-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+/* Slider */
+.slider--container,
+.slick-list,
+.slick-track,
+.slick-slider {
+  height: 100%;
+}
+
+.slick-slider {
+  padding-left: 7.5px;
+  padding-left:  0.46875rem;
+  position: relative;
+}
+
+.slick-list {
+  overflow: hidden;
 }
 
 .slick-slide {
   display: inline-block;
+  height: 100%;
 }
 
-.panel--slide {
-  margin-right: 4.5px;
-  margin-right:  0.28125rem;
+.slick-track {
+  position: relative;
+  z-index: 1;
+  padding-top: 2.7px;
+  padding-top:  0.16875rem;
+  padding-bottom: 0.9px;
+  padding-bottom:  0.05625rem;
 }
 
+/* Arrows */
+.slick-arrow {
+  position: absolute;
+  display: block;
+  width: 36px;
+  width: 2.25rem;
+  height: 36px;
+  height: 2.25rem;
+  background-color: #161616;
+  line-height: 0px;
+  font-size: 0px;
+  cursor: pointer;
+  color: transparent;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+     -moz-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  padding: 0;
+  border: none;
+  outline: none;
+  z-index: 2;
+  opacity: 1;
+  -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+     -moz-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+  -webkit-transition: opacity .1s ease-in, -webkit-box-shadow .2s ease-in-out;
+  transition: opacity .1s ease-in, -webkit-box-shadow .2s ease-in-out;
+  transition: opacity .1s ease-in, box-shadow .2s ease-in-out;
+  transition: opacity .1s ease-in, box-shadow .2s ease-in-out, -webkit-box-shadow .2s ease-in-out, -moz-box-shadow .2s ease-in-out;
+}
+
+.slick-arrow.slick-disabled {
+  opacity: 0;
+  cursor: default;
+  z-index: 0;
+}
+
+.slick-arrow__icon {
+  width: 100%;
+  height: 100%;
+  padding: 6.3px;
+  padding:  0.39375rem;
+  fill: #fff;
+}
+
+.slick-next {
+  right: 0;
+}
+
+.slick-prev {
+  left: -10px;
+}
+
+/* Dots */
 .editor_content ul {
   list-style: bulleted;
   margin-left: 30px;
   margin-left:  1.875rem;
+}
+
+@media only screen and (max-height: 800px) {
+  .launch-screen .hero .panel__head {
+    font-size: 1.75rem;
+    line-height: 1.28571;
+  }
+}
+
+@media only screen and (max-height: 800px) and (max-width: 480px) {
+  .launch-screen .hero .panel__head {
+    font-size: 5vw;
+  }
+}
+
+@media only screen and (max-height: 800px) {
+  .launch-screen .panel__cta {
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1.71429;
+    margin-bottom: 0;
+  }
+  .launch-screen .panel__head--bottom {
+    margin-bottom: 0;
+  }
+  .launch-screen .panel {
+    padding: 9px 13.5px;
+    padding:  0.5625rem 0.84375rem;
+  }
+  .launch-screen .panel--slide {
+    padding: 9px 13.5px;
+    padding:  0.5625rem 0.84375rem;
+  }
+  .launch-screen .bar {
+    margin-top: 2.5vh;
+  }
+  .launch-screen .bar:before {
+    font-size: 6px;
+    top: -1.75vh;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .launch-screen .slider {
+    margin-left: -2%;
+  }
+  .launch-screen .slider:after {
+    content: " ";
+    display: table;
+    clear: both;
+    height: 1px;
+  }
+  .launch-screen .panel--slide {
+    width: 48%;
+    margin: 2% 0 2% 2%;
+    height:  6.75rem;
+    float: left;
+  }
+  .launch-screen .panel__head--bottom {
+    position: relative;
+  }
+}
+
+.panel--slide {
+  display: inline-block;
+  margin-right: 4.5px;
+  margin-right:  0.28125rem;
+  vertical-align: bottom;
+  outline: none;
+}
+
+.panel--slide:hover, .panel--slide:focus {
+  -webkit-box-shadow: 0 1px 10px -9px rgba(73, 73, 73, 0.25), 0 1px 2px 1px rgba(73, 73, 73, 0.13);
+     -moz-box-shadow: 0 1px 10px -9px rgba(73, 73, 73, 0.25), 0 1px 2px 1px rgba(73, 73, 73, 0.13);
+          box-shadow: 0 1px 10px -9px rgba(73, 73, 73, 0.25), 0 1px 2px 1px rgba(73, 73, 73, 0.13);
+}
+
+.panel--slide:active {
+  -webkit-box-shadow: 0 1px 6px -5px rgba(73, 73, 73, 0.25), 0 0 1px 1px rgba(73, 73, 73, 0.13);
+     -moz-box-shadow: 0 1px 6px -5px rgba(73, 73, 73, 0.25), 0 0 1px 1px rgba(73, 73, 73, 0.13);
+          box-shadow: 0 1px 6px -5px rgba(73, 73, 73, 0.25), 0 0 1px 1px rgba(73, 73, 73, 0.13);
+  background-color: #f9f5f5;
 }
 
 .txt-center {
@@ -3054,7 +3339,13 @@ Also useful as a modifier class since it can be used on any container with ancho
 }
 
 .txt-upper {
-  text-transform: uppercase;
+  text-transform: uppercase !important;
+}
+
+.txt-small {
+  font-size: 14px !important;
+  font-size: 0.875rem !important;
+  line-height: 1.71429 !important;
 }
 
 .list_naked {
@@ -3163,7 +3454,7 @@ Also useful as a modifier class since it can be used on any container with ancho
   float: none !important;
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 730px) {
   .smalls_align_left {
     float: left !important;
     margin-right:  1.875rem;
@@ -3192,7 +3483,7 @@ Also useful as a modifier class since it can be used on any container with ancho
   }
 }
 
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 731px) {
   .bigs_align_left {
     float: left !important;
     margin-right:  1.875rem;
@@ -3465,7 +3756,7 @@ Also useful as a modifier class since it can be used on any container with ancho
   padding-right:  3.75rem !important;
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 730px) {
   .smalls_space_0 {
     margin: 0 !important;
   }
@@ -3603,7 +3894,7 @@ Also useful as a modifier class since it can be used on any container with ancho
   }
 }
 
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 731px) {
   .bigs_space_0 {
     margin: 0 !important;
   }
@@ -3895,7 +4186,7 @@ Also useful as a modifier class since it can be used on any container with ancho
   display: none !important;
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 730px) {
   .smalls_show {
     display: block !important;
   }
@@ -3910,7 +4201,7 @@ Also useful as a modifier class since it can be used on any container with ancho
   }
 }
 
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 731px) {
   .bigs_show {
     display: block !important;
   }
@@ -3971,7 +4262,7 @@ Also useful as a modifier class since it can be used on any container with ancho
   font-family: "Vitesse", "Roboto Slab", "Rockwell", "Cambria", "Lucida Bright", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 730px) {
   .smalls_txt_normal {
     font-weight: 400  !important;
   }
@@ -4009,7 +4300,7 @@ Also useful as a modifier class since it can be used on any container with ancho
   }
 }
 
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 731px) {
   .bigs_txt_normal {
     font-weight: 400  !important;
   }

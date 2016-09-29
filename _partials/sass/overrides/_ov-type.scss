@@ -11,5 +11,10 @@
 }
 
 .txt-upper {
-    text-transform: uppercase;
+    text-transform: uppercase !important;
+}
+
+.txt-small {
+    @include rems(font-size, $type-small-size, $important: true);
+    line-height: $small-lh !important;
 }

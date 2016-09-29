@@ -24,10 +24,9 @@
 @import 'tools/t-type';
 
 /* SG
-# Color Blocks
-A good way to look over your color pallete.
+# Colors
 
-Include a bunch of elements with `class="color-blocks"`, and the css will do the rest. Requires `@color-palette-output()` to generate. Uses `$$colors` map.
+All colors have a `base`, `light`, `lighter`, `lightest`, `dark`, `darker` and `darkest` variation.
 
 ```html_example
 <div class="color-block"></div><div class="color-block"></div><div class="color-block"></div><div class="color-block"></div><div class="color-block"></div><div class="color-block"></div><div class="color-block"></div>

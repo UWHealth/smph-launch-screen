@@ -434,7 +434,7 @@
     <h1 class="sg-logo">
         <a href="#" class="sg-menu_link js-menu_showall">SMPH</a>
     </h1>
-    <div id="sg-menu_wrap" class="txt-small"></div>
+    <div id="sg-menu_wrap"></div>
 </nav>
 
 <main id="sg-main" class="sg-main">    <section id="patterns" class="sg-section sg-section-patterns" data-sg-section="patterns">
@@ -475,11 +475,11 @@
         </div> 
             <div class="sg-category">
             <div class="sg-category_wrap">
-                <header class="sg-category_head" data-sg-section="Color-Blocks" id="patterns-color-blocks-">
-                    <h2 class="sg-heading-category">Color Blocks</h2>
-                </header>                <article class="sg-article"  data-sg-section="Color Blocks" data-sg-heading="">
+                <header class="sg-category_head" data-sg-section="Colors" id="patterns-colors-">
+                    <h2 class="sg-heading-category">Colors</h2>
+                </header>                <article class="sg-article"  data-sg-section="Colors" data-sg-heading="">
                     <div class="sg-article_comment">
-                        <p>A good way to look over your color pallete.</p><p>Include a bunch of elements with <code class="sg-code sg-codespan">class=&quot;color-blocks&quot;</code>, and the css will do the rest. Requires <code id="mixin-color-palette-output" class="sg-global-mixin sg-code sg-codespan sg-global" data-code-id="@color-palette-output()">@color-palette-output()</code> to generate. Uses <code id="variable--colors" class="sg-global-variable sg-code sg-codespan sg-global" data-code-id="$colors">$colors</code> map.</p>
+                        <p>All colors have a <code class="sg-code sg-codespan">base</code>, <code class="sg-code sg-codespan">light</code>, <code class="sg-code sg-codespan">lighter</code>, <code class="sg-code sg-codespan">lightest</code>, <code class="sg-code sg-codespan">dark</code>, <code class="sg-code sg-codespan">darker</code> and <code class="sg-code sg-codespan">darkest</code> variation.</p>
                     </div>
                     <div class="sg-example">
                         <div class="sg-example_wrap">
@@ -502,16 +502,6 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"color-block"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"color-block"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"color-block"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"color-block"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"color-block"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"color-block"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"color-block"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
                             </div>
                         </div>
-                    </div>
-                </article>        </div>
-        </div> 
-            <div class="sg-category">
-            <div class="sg-category_wrap">
-                <header class="sg-category_head" data-sg-section="Config" id="patterns-config-">
-                    <h2 class="sg-heading-category">Config</h2>
-                </header>                <article class="sg-article"  data-sg-section="Config" data-sg-heading="">
-                    <div class="sg-article_comment">
-                        <h2 id="settings-and-configuration-for-all-styles-" class="sg-heading sg-heading-2">Settings and configuration for all styles.</h2>
                     </div>
                 </article>        </div>
         </div> 
@@ -560,6 +550,12 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
                             </div>
                         </div>
+                    </div>
+                </article>                <article class="sg-article" id="patterns-layout-flex-grid" data-sg-section="Layout" data-sg-heading="Flex Grid">
+                    <header class="sg-article_head ">
+                        <h3 class="sg-heading sg-heading-article">Flex Grid</h3></header>
+                    <div class="sg-article_comment">
+                        <p>Adding the modifier <code class="sg-code sg-codespan">--flex</code> to any grid will give <code class="sg-code sg-codespan">grid__items</code> flex-box behavior, meaning all grid items will fill their space as needed. <code class="sg-code sg-codespan">grid__item-fit</code> will force stop the grid item from growing.</p><p><code class="sg-code sg-codespan">grid__item--master</code> and <code class="sg-code sg-codespan">grid__item--slave</code> will create grid items with less or more priority (based on their content).</p>
                     </div>
                 </article>                <article class="sg-article" id="patterns-layout-media-object" data-sg-section="Layout" data-sg-heading="Media object">
                     <header class="sg-article_head ">
@@ -665,12 +661,6 @@ Children can be named four things:</p><ul>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
                             </div>
                         </div>
-                    </div>
-                </article>                <article class="sg-article" id="patterns-layout-flex-grid" data-sg-section="Layout" data-sg-heading="Flex Grid">
-                    <header class="sg-article_head ">
-                        <h3 class="sg-heading sg-heading-article">Flex Grid</h3></header>
-                    <div class="sg-article_comment">
-                        <p>Adding the modifier <code class="sg-code sg-codespan">--flex</code> to any grid will give <code class="sg-code sg-codespan">grid__items</code> flex-box behavior, meaning all grid items will fill their space as needed. <code class="sg-code sg-codespan">grid--flex-fit</code> will force all grid items in that grid to fit in  <code class="sg-code sg-codespan">grid__item--master</code> and <code class="sg-code sg-codespan">grid__item--slave</code> will create grid items with less or more priority.</p>
                     </div>
                 </article>        </div>
         </div> 
@@ -795,6 +785,101 @@ Children can be named four things:</p><ul>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>List Item<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </article>        </div>
+        </div> 
+            <div class="sg-category">
+            <div class="sg-category_wrap">
+                <header class="sg-category_head" data-sg-section="Panels" >
+                    <h2 class="sg-heading-category">Panels</h2>
+                </header>                <article class="sg-article" id="patterns-panels-single" data-sg-section="Panels" data-sg-heading="Single">
+                    <header class="sg-article_head ">
+                        <h3 class="sg-heading sg-heading-article">Single</h3></header>
+                    <div class="sg-article_comment">
+                        <p>Panels are boxes with a simple header, and an optional call-to-action. They should be used as callouts, and should typically contain a link.</p><p>Panels require a modifier tag to gain most of their style (background and text color). <code class="sg-code sg-codespan">panel--white</code>, <code class="sg-code sg-codespan">panel--gray</code> and <code class="sg-code sg-codespan">panel--red</code> are the most common.</p><p>Calls to action will receive special styling and a chevron after their content. Adding <code class="sg-code sg-codespan">panel--link</code> to the panel itself will cause the panel to react to hover events.</p>
+                    </div>
+                    <div class="sg-example">
+                        <div class="sg-example_wrap">
+                            <div class="panel panel--red panel--dust">
+    <h2 class="panel__head">A Panel</h2>
+</div><a class="panel panel--link panel--white" href="#">
+    <h3 class="panel__head bar bar--large">A Panel with CTA</h3>
+    <p class="panel__cta">Check it out</p>
+</a>
+                        </div>
+                        <div class="sg-example_markup">
+                            <div class="sg-markup sg-markup-block">
+                                <pre class="sg-markup_wrap"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"panel panel--red panel--dust"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"panel__head"</span>&gt;</span>A Panel<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+                            </div>
+                            <div class="sg-markup sg-markup-block">
+                                <pre class="sg-markup_wrap"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"panel panel--link panel--white"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"panel__head bar bar--large"</span>&gt;</span>A Panel with CTA<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"panel__cta"</span>&gt;</span>Check it out<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </article>                <article class="sg-article" id="patterns-panels-groups" data-sg-section="Panels" data-sg-heading="Groups">
+                    <header class="sg-article_head ">
+                        <h3 class="sg-heading sg-heading-article">Groups</h3></header>
+                    <div class="sg-article_comment">
+                        <p>Panels can be grouped together by wrapping them in a <code class="sg-code sg-codespan">panels</code> class. This will cause them to align in a row, with equal heights.</p><p>Adding <code class="sg-code sg-codespan">panel--flex</code> to any children will force any call-to-actions to the bottom of the parent panel.</p>
+                    </div>
+                    <div class="sg-example">
+                        <div class="sg-example_wrap">
+                            <div class="panels">
+    <div class="panel panel--flex panel--red">
+        <h4 class="panel__head bar bar--large">Panel</h4>
+        <p class="panel__cta">CTA (bottom-aligned)</p>
+    </div>
+    <div class="panel panel--white">
+        <h5 class="panel__head bar bar--mini">Panel</h5>
+        <p class="panel__cta txt-small">CTA</p>
+    </div>
+    <div class="panel panel--flex panel--gray">
+        <h4 class="panel__head bar bar--large">Panel with longer title</h4>
+        <p class="panel__cta">Call to action</p>
+    </div>
+    <div class="panel panel--flex panel--white">
+        <h4 class="panel__head bar bar--large">Another Panel</h4>
+        <p class="panel__cta">Call to action</p>
+    </div>
+    <div class="panel panel--red">
+        <h4 class="panel__head bar bar--large">Panel</h4>
+        <p class="panel__cta">Call to action</p>
+    </div>
+
+</div>
+                        </div>
+                        <div class="sg-example_markup">
+                            <div class="sg-markup sg-markup-block">
+                                <pre class="sg-markup_wrap"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"panels"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"panel panel--flex panel--red"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"panel__head bar bar--large"</span>&gt;</span>Panel<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"panel__cta"</span>&gt;</span>CTA (bottom-aligned)<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"panel panel--white"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h5</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"panel__head bar bar--mini"</span>&gt;</span>Panel<span class="hljs-tag">&lt;/<span class="hljs-name">h5</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"panel__cta txt-small"</span>&gt;</span>CTA<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"panel panel--flex panel--gray"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"panel__head bar bar--large"</span>&gt;</span>Panel with longer title<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"panel__cta"</span>&gt;</span>Call to action<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"panel panel--flex panel--white"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"panel__head bar bar--large"</span>&gt;</span>Another Panel<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"panel__cta"</span>&gt;</span>Call to action<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"panel panel--red"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"panel__head bar bar--large"</span>&gt;</span>Panel<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"panel__cta"</span>&gt;</span>Call to action<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
                             </div>
                         </div>
                     </div>
@@ -1017,7 +1102,11 @@ Children can be named four things:</p><ul>
             <div class="sg-category_wrap">
                 <header class="sg-category_head" data-sg-section="Config" >
                     <h2 class="sg-heading-category">Config</h2>
-                </header>                <article class="sg-article" id="development-config-color-settings" data-sg-section="Config" data-sg-heading="Color Settings">
+                </header>                <article class="sg-article" id="development-config-" data-sg-section="Config" data-sg-heading="">
+                    <div class="sg-article_comment">
+                        <h2 id="settings-and-configuration-for-all-styles-" class="sg-heading sg-heading-2">Settings and configuration for all styles.</h2>
+                    </div>
+                </article>                <article class="sg-article" id="development-config-color-settings" data-sg-section="Config" data-sg-heading="Color Settings">
                     <header class="sg-article_head ">
                         <h3 class="sg-heading sg-heading-article">Color Settings</h3>
                         <p><code class="sg-codespan sg-file">_partials/sass/_config.scss</code></p><hr></header>
@@ -2255,58 +2344,61 @@ jQuery.fn.toc.defaults = {
 })(jQuery);
 ;
 
-    $('#sg-menu_wrap').toc({
-        'selectors': '.sg-heading-section,.sg-heading-category,.sg-heading-article', //elements to use as headings
-        'container': '#sg-main', //element to find all selectors in
-        'smoothScrolling': function(target, options, callback) { //enable or disable smooth scrolling on click
-            $(target).smoothScroller({
-              offset: 35,
-              speed: 10
-            }).on('smoothScrollerComplete', function() {
-              callback();
-            });
-        },
-        'listType': '<ul class="sg-menu_list"></ul>',
-        'prefix': 'sg', //prefix for anchor tags and class names
-        'onHighlight': function(el) { //called when a new section is highlighted
-            var $el = $(el);
-            $el.closest('.sg-menu_category').addClass('sg-category-active')
-            $('.sg-category-active').not($el.closest('.sg-menu_category')).removeClass('sg-category-active');
-            expandCategory($el);
-        },
-        'activeClass': 'sg-toc-active',
-        'highlightOnScroll': true, //add class to heading that is currently in focus
-        'highlightOffset': 50, //offset to trigger the next headline
-        'headerText': function(i, heading, $heading) { //custom function building the header-item text
-            return $heading.text();
-        },
-        'itemClass': function(i, heading, $heading, prefix) { // custom function for item class
-            //List items class="sg-menu_[section,category,article] sg-menu_item"
-            return $heading.attr('class').replace('sg-heading-', 'sg-menu_').replace('sg-heading ', ' ') + ' sg-menu_item';
+        $(function(){
+            $('#sg-menu_wrap').toc({
+            'selectors': '.sg-heading-section,.sg-heading-category,.sg-heading-article', //elements to use as headings
+            'container': '#sg-main', //element to find all selectors in
+            'smoothScrolling': function(target, options, callback) { //enable or disable smooth scrolling on click
+                $(target).smoothScroller({
+                  offset: 35,
+                  speed: 10
+                }).on('smoothScrollerComplete', function() {
+                  callback();
+                });
+            },
+            'listType': '<ul class="sg-menu_list"></ul>',
+            'prefix': 'sg', //prefix for anchor tags and class names
+            'onHighlight': function(el) { //called when a new section is highlighted
+                var $el = $(el);
+                $el.closest('.sg-menu_category').addClass('sg-category-active')
+                $('.sg-category-active').not($el.closest('.sg-menu_category')).removeClass('sg-category-active');
+                expandCategory($el);
+            },
+            'activeClass': 'sg-toc-active',
+            'highlightOnScroll': true, //add class to heading that is currently in focus
+            'highlightOffset': 50, //offset to trigger the next headline
+            'headerText': function(i, heading, $heading) { //custom function building the header-item text
+                return $heading.text();
+            },
+            'itemClass': function(i, heading, $heading, prefix) { // custom function for item class
+                //List items class="sg-menu_[section,category,article] sg-menu_item"
+                return $heading.attr('class').replace('sg-heading-', 'sg-menu_').replace('sg-heading ', ' ') + ' sg-menu_item';
+            }
+        });
+
+
+        function expandCategory($el) {
+            if($el.hasClass('sg-menu_category')){
+                $('.sg-category-active').removeClass('sg-category-active');
+                $el.addClass('sg-category-active');
+            }
         }
-    });
 
-    function expandCategory($el) {
-        if($el.hasClass('sg-menu_category')){
-            $('.sg-category-active').removeClass('sg-category-active');
-            $el.addClass('sg-category-active');
-        }
-    }
+        $("#sg-menu_wrap").find('a').addClass('sg-menu_link').on('click', function(el){
+            expandCategory($(el));
+        });
 
-    $("#sg-menu_wrap").find('a').addClass('sg-menu_link').on('click', function(el){
-        expandCategory($(el));
-    });
+        $('.sg-menu_article').each(function(i, el){
+            var category = $(el).prevAll('.sg-menu_category')[0];
+            $(el).appendTo(category);
+        });
 
-    $('.sg-menu_article').each(function(i, el){
-        var category = $(el).prevAll('.sg-menu_category')[0];
-        $(el).appendTo(category);
-    });
-
-    $('.sg-menu_category').each(function(i, el){
-        var section = $(el).prevAll('.sg-menu_section')[0];
-        $(el).appendTo(section);
-    }).each(function(i, el){
-        $(this).find('.sg-menu_article').wrapAll('<ul class="sg-menu_list"></ul>');
+        $('.sg-menu_category').each(function(i, el){
+            var section = $(el).prevAll('.sg-menu_section')[0];
+            $(el).appendTo(section);
+        }).each(function(i, el){
+            $(this).find('.sg-menu_article').wrapAll('<ul class="sg-menu_list"></ul>');
+        });
     });
 </script>
 

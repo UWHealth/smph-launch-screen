@@ -1,9 +1,20 @@
-.panels {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-}
+/* SG
+
+# Panels/Single
+
+@priority 1
+
+Panels are boxes with a simple header, and an optional call-to-action. They should be used as callouts, and should typically contain a link.
+
+Panels require a modifier tag to gain most of their style (background and text color). `panel--white`, `panel--gray` and `panel--red` are the most common.
+
+```html_example
+<div class="panel panel--red panel--dust">
+    <h2 class="panel__head">A Panel</h2>
+</div>
+```
+
+*/
 
 .panel {
     @include type-space(padding, 1 .9);
@@ -27,8 +38,17 @@
     color: #fff !important;
 }
 
+.panel--gray {
+    background-color: color(bg,dark);
+
+    .panel__head {
+        color: color(badgers);
+    }
+}
+
+
 .panel--dust-2 {
-    background-image: url('../images/dust-overlay-2.png');
+    background-image: url('../images/dust-overlay2.png');
 }
 
 .panel--elevated {
@@ -46,9 +66,16 @@
 .panel--link:focus {
     text-decoration: none;
     transform: translateY(-1px);
-    box-shadow: 0 15px 26px -3px rgba(mix(color(badgers), color(type), 20%), .5),
-        0 3px 25px -25px rgba(color(type), .5),
-        0 3px 10px 2px rgba(color(type), .3);
+    box-shadow: 0 15px 26px -3px rgba(mix(color(badgers), color(type), 20%), .25),
+        0 3px 25px -25px rgba(color(type), .25),
+        0 3px 10px 2px rgba(color(type), .13);
+}
+
+.panel--link:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 26px -25px rgba(mix(color(badgers), color(type), 20%), .25),
+        0 2px 25px -25px rgba(color(type), .25),
+        0 1px 10px 2px rgba(color(type), .13);
 }
 
 .panel--flex {
@@ -60,20 +87,39 @@
 .panel__head {
     text-transform: uppercase;
     @include type-space(margin-bottom, 4);
-    margin-bottom: 6vh;
+    margin-bottom: 5.5vh;
 
     @include mq(smalls){
-        font-size: 5vw;
+        font-size: 4.5vw;
     }
 }
+
+.panel__head--bottom {
+    position: absolute;
+    bottom: 1rem;
+    @include type-space(margin-bottom, 1);
+    padding-right: 8%;
+}
+
+/* SG
+
+Calls to action will receive special styling and a chevron after their content. Adding `panel--link` to the panel itself will cause the panel to react to hover events.
+
+```html_example
+<a class="panel panel--link panel--white" href="#">
+    <h3 class="panel__head bar bar--large">A Panel with CTA</h3>
+    <p class="panel__cta">Check it out</p>
+</a>
+```
+*/
 
 .panel__cta {
     @include rems(font-size, $type-h5-size);
     font-family: $secondary-font-stack;
     font-style: italic;
+    word-break: break-all;
 
     @include mq(smalls) {
-        word-break: break-all;
         @include rems(font-size, $base-font-size);
     }
 
@@ -81,19 +127,53 @@
         content: "\00a0\00BB";
     }
 
-    .panel:hover & {
+    .panel:hover &,
+    &:hover {
         text-decoration: underline;
     }
 }
 
-.slider {
-    overflow-x: hidden;
-}
 
-.slick-slide {
-    display: inline-block;
-}
+/* SG
+# Panels/Groups
 
-.panel--slide {
-    @include type-space(margin-right, .15);
+Panels can be grouped together by wrapping them in a `panels` class. This will cause them to align in a row, with equal heights.
+
+Adding `panel--flex` to any children will force any call-to-actions to the bottom of the parent panel.
+
+```html_example
+<div class="panels">
+    <div class="panel panel--flex panel--red">
+        <h4 class="panel__head bar bar--large">Panel</h4>
+        <p class="panel__cta">CTA (bottom-aligned)</p>
+    </div>
+    <div class="panel panel--white">
+        <h5 class="panel__head bar bar--mini">Panel</h5>
+        <p class="panel__cta txt-small">CTA</p>
+    </div>
+    <div class="panel panel--flex panel--gray">
+        <h4 class="panel__head bar bar--large">Panel with longer title</h4>
+        <p class="panel__cta">Call to action</p>
+    </div>
+    <div class="panel panel--flex panel--white">
+        <h4 class="panel__head bar bar--large">Another Panel</h4>
+        <p class="panel__cta">Call to action</p>
+    </div>
+    <div class="panel panel--red">
+        <h4 class="panel__head bar bar--large">Panel</h4>
+        <p class="panel__cta">Call to action</p>
+    </div>
+
+</div>
+
+```
+
+*/
+
+.panels {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: stretch;
 }
