@@ -136,6 +136,10 @@ Adding the modifier `--flex` to any grid will give `grid__items` flex-box behavi
     }
 }
 
+.grid--flex--fit {
+    flex-wrap: nowrap;
+}
+
 .grid__item--fit {
     flex-shrink: 1;
     flex-grow: 0;

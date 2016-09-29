@@ -2293,6 +2293,11 @@ Adding the modifier `--flex` to any grid will give `grid__items` flex-box behavi
           flex: 1 1 auto;
 }
 
+.grid--flex--fit {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
 .grid__item--fit {
   -ms-flex-negative: 1;
       flex-shrink: 1;
