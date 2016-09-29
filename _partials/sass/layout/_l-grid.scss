@@ -64,6 +64,7 @@ Grids are built on `inline-block`
 }
 
 .grid__item {
+    flex: 1 1 auto;
     @extend %grid_item;
 }
 
@@ -114,6 +115,8 @@ Grids are built on `inline-block`
 
 Adding the modifier `--flex` to any grid will give `grid__items` flex-box behavior, meaning all grid items will fill their space as needed. `grid__item-fit` will force stop the grid item from growing.
 
+`grid--flex--fit` will prevent items from wrapping, forcing grid items to fill whatever space they're given.
+
 `grid__item--master` and `grid__item--slave` will create grid items with less or more priority (based on their content).
 
 
@@ -132,7 +135,6 @@ Adding the modifier `--flex` to any grid will give `grid__items` flex-box behavi
 
     & > .grid__item {
         display: flex;
-        flex: 1 1 auto;
     }
 }
 
@@ -147,15 +149,11 @@ Adding the modifier `--flex` to any grid will give `grid__items` flex-box behavi
 
 .grid__item--fill {
     flex-grow: 1;
-    flex-shrink: .1;
+    flex-shrink: 1;
 }
 
 .grid--flex--column {
     flex-direction: column;
-}
-
-.grid--flex--fit {
-    flex-wrap: nowrap;
 }
 
 .grid__item--master {

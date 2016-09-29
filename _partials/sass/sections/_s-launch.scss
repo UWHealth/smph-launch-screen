@@ -65,13 +65,33 @@
             position: relative;
         }
     }
+
+    .slider {
+        height: 100%;
+    }
+
+    @include mq('min-width' 640px) { //Fallback for slider not initializing
+        .slider:not(.slick-initialized) {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    .slick-initialized {
+        .panel--slide .panel__head {
+            position: absolute;
+        }
+    }
 }
+
 
 .panel--slide {
     display: inline-block;
     @include type-space(margin-right, .15);
     vertical-align: bottom;
     outline: none;
+    height: 100%;
 
     &:hover,
     &:focus {

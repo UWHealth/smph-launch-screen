@@ -95,7 +95,6 @@ Panels require a modifier tag to gain most of their style (background and text c
 }
 
 .panel__head--bottom {
-    position: absolute;
     bottom: 1rem;
     @include type-space(margin-bottom, 1);
     padding-right: 8%;

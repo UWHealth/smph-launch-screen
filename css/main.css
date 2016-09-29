@@ -2210,6 +2210,13 @@ Grids are built on `inline-block`
   }
 }
 
+.grid__item {
+  -webkit-box-flex: 1;
+     -moz-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
 .w-whole {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
@@ -2247,6 +2254,8 @@ Grids are built on `inline-block`
 @priority 2
 
 Adding the modifier `--flex` to any grid will give `grid__items` flex-box behavior, meaning all grid items will fill their space as needed. `grid__item-fit` will force stop the grid item from growing.
+
+`grid--flex--fit` will prevent items from wrapping, forcing grid items to fill whatever space they're given.
 
 `grid__item--master` and `grid__item--slave` will create grid items with less or more priority (based on their content).
 
@@ -2287,10 +2296,6 @@ Adding the modifier `--flex` to any grid will give `grid__items` flex-box behavi
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-     -moz-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
 }
 
 .grid--flex--fit {
@@ -2312,8 +2317,8 @@ Adding the modifier `--flex` to any grid will give `grid__items` flex-box behavi
      -moz-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  -ms-flex-negative: .1;
-      flex-shrink: .1;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
 }
 
 .grid--flex--column {
@@ -2323,11 +2328,6 @@ Adding the modifier `--flex` to any grid will give `grid__items` flex-box behavi
      -moz-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-.grid--flex--fit {
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
 }
 
 .grid__item--master {
@@ -3058,7 +3058,6 @@ Panels require a modifier tag to gain most of their style (background and text c
 }
 
 .panel__head--bottom {
-  position: absolute;
   bottom: 1rem;
   margin-bottom: 18px;
   margin-bottom:  1.125rem;
@@ -3310,12 +3309,40 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
   }
 }
 
+.launch-screen .slider {
+  height: 100%;
+}
+
+@media only screen and (min-width: 640px) {
+  .launch-screen .slider:not(.slick-initialized) {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+       -moz-box-orient: horizontal;
+       -moz-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+       -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.launch-screen .slick-initialized .panel--slide .panel__head {
+  position: absolute;
+}
+
 .panel--slide {
   display: inline-block;
   margin-right: 4.5px;
   margin-right:  0.28125rem;
   vertical-align: bottom;
   outline: none;
+  height: 100%;
 }
 
 .panel--slide:hover, .panel--slide:focus {
