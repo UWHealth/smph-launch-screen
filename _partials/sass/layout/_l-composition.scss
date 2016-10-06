@@ -38,6 +38,7 @@ $hero-mq: 'max-height' 900px;
 
 	@include mq($hero-mq) {
 		@include type-space(padding, .5 0 .5);
+		padding: 2vh 0;
 	}
 
 	&:before,
@@ -82,6 +83,7 @@ $hero-mq: 'max-height' 900px;
 .hero__logo {
 	display: inline-block;
 	text-align: center;
+	opacity: .8;
 
 	@include mq($hero-mq) {
 		max-width: 60px;
@@ -92,30 +94,30 @@ $hero-mq: 'max-height' 900px;
 	}
 }
 
-.teirs {
+.tiers {
 	display: flex;
 	justify-content: space-between;
 	height: 100vh;
 	flex-direction: column;
 }
 
-.teir-1 {
+.tier__1 {
 	height: auto;
 	min-height: 60vh;
 	flex: 0 1 auto;
 
 	@include mq($hero-mq) {
-		min-height: 45vh;
+		min-height: 47vh;
 	}
 }
 
-.teir-2 {
+.tier__2 {
 	flex: 0 1 auto;
 	vertical-align: middle;
 	@include type-space(padding, 1 0 1 1);
 }
 
-.teir-3 {
+.tier__3 {
 	min-height: 5vh;
 	display: flex;
 	flex: 0 0 auto;

@@ -157,11 +157,11 @@ Adding the modifier `--flex` to any grid will give `grid__items` flex-box behavi
 }
 
 .grid__item--master {
-    flex-shrink: .2;
+    flex-shrink: .4;
     flex-grow: .85;
 }
 
 .grid__item--slave {
-    flex-grow: .1;
+    flex-grow: .5;
     flex-shrink: 2;
 }

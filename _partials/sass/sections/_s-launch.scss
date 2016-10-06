@@ -2,9 +2,33 @@
 
 .launch-screen {
 
-    @include mq('max-height' 800px) {
+    .hero .panel--flex {
+        min-height: 24vh;
+    }
+
+    .wrap {
+        padding: 2.5vh 0;
+    }
+
+    @include mq('max-height' 750px) {
+        .panel,
+        .panel--slide {
+            @include type-space(padding, .75 .825);
+        }
+
+        .panel__cta {
+            margin-bottom: 0;
+        }
+
+        .tier-2 .heading--underline {
+            margin-bottom: 2vh;
+        }
+    }
+
+    @include mq('max-height' 650px) {
 
         .hero {
+
             .panel__head {
                 @include font-size($type-h3-size, $h3-lh);
 
@@ -16,19 +40,15 @@
 
         .panel__cta {
             @include font-size($type-small-size, $small-lh);
-            margin-bottom: 0;
         }
 
         .panel__head--bottom {
             margin-bottom: 0;
         }
 
-        .panel {
-            @include type-space(padding, .5 .45);
-        }
-
+        .panel,
         .panel--slide {
-            @include type-space(padding, .5 .45);
+            @include type-space(padding, .65 .75);
         }
 
         .bar {
@@ -59,9 +79,14 @@
             margin: 2% 0 2% 2%;
             @include type-space(height, 6);
             float: left;
+
+            .panel__head {
+                @include font-size(18px);
+            }
         }
 
         .panel__head--bottom {
+            bottom: auto;
             position: relative;
         }
     }
@@ -70,7 +95,7 @@
         height: 100%;
     }
 
-    @include mq('min-width' 640px) { //Fallback for slider not initializing
+    @include mq('min-width' 641px) { //Fallback for slider not initializing
         .slider:not(.slick-initialized) {
             display: flex;
             flex-direction: row;

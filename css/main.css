@@ -1955,6 +1955,7 @@ q:first-child {
 @media only screen and (max-height: 900px) {
   .hero__body {
     padding:  0.5625rem 0rem 0.5625rem;
+    padding: 2vh 0;
   }
 }
 
@@ -2000,6 +2001,7 @@ q:first-child {
 .hero__logo {
   display: inline-block;
   text-align: center;
+  opacity: .8;
 }
 
 @media only screen and (max-height: 900px) {
@@ -2014,7 +2016,7 @@ q:first-child {
   }
 }
 
-.teirs {
+.tiers {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -2032,7 +2034,7 @@ q:first-child {
           flex-direction: column;
 }
 
-.teir-1 {
+.tier__1 {
   height: auto;
   min-height: 60vh;
   -webkit-box-flex: 0;
@@ -2042,12 +2044,12 @@ q:first-child {
 }
 
 @media only screen and (max-height: 900px) {
-  .teir-1 {
-    min-height: 45vh;
+  .tier__1 {
+    min-height: 47vh;
   }
 }
 
-.teir-2 {
+.tier__2 {
   -webkit-box-flex: 0;
      -moz-box-flex: 0;
       -ms-flex: 0 1 auto;
@@ -2057,7 +2059,7 @@ q:first-child {
   padding:  1.125rem 0rem 1.125rem 1.875rem;
 }
 
-.teir-3 {
+.tier__3 {
   min-height: 5vh;
   display: -webkit-box;
   display: -moz-box;
@@ -2331,8 +2333,8 @@ Adding the modifier `--flex` to any grid will give `grid__items` flex-box behavi
 }
 
 .grid__item--master {
-  -ms-flex-negative: .2;
-      flex-shrink: .2;
+  -ms-flex-negative: .4;
+      flex-shrink: .4;
   -webkit-box-flex: .85;
      -moz-box-flex: .85;
       -ms-flex-positive: .85;
@@ -2340,10 +2342,10 @@ Adding the modifier `--flex` to any grid will give `grid__items` flex-box behavi
 }
 
 .grid__item--slave {
-  -webkit-box-flex: .1;
-     -moz-box-flex: .1;
-      -ms-flex-positive: .1;
-          flex-grow: .1;
+  -webkit-box-flex: .5;
+     -moz-box-flex: .5;
+      -ms-flex-positive: .5;
+          flex-grow: .5;
   -ms-flex-negative: 2;
       flex-shrink: 2;
 }
@@ -3248,36 +3250,53 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
   margin-left:  1.875rem;
 }
 
-@media only screen and (max-height: 800px) {
+.launch-screen .hero .panel--flex {
+  min-height: 24vh;
+}
+
+.launch-screen .wrap {
+  padding: 2.5vh 0;
+}
+
+@media only screen and (max-height: 750px) {
+  .launch-screen .panel,
+  .launch-screen .panel--slide {
+    padding:  0.84375rem 1.54688rem;
+  }
+  .launch-screen .panel__cta {
+    margin-bottom: 0;
+  }
+  .launch-screen .tier-2 .heading--underline {
+    margin-bottom: 2vh;
+  }
+}
+
+@media only screen and (max-height: 650px) {
   .launch-screen .hero .panel__head {
     font-size: 1.75rem;
     line-height: 1.28571;
   }
 }
 
-@media only screen and (max-height: 800px) and (max-width: 480px) {
+@media only screen and (max-height: 650px) and (max-width: 480px) {
   .launch-screen .hero .panel__head {
     font-size: 5vw;
   }
 }
 
-@media only screen and (max-height: 800px) {
+@media only screen and (max-height: 650px) {
   .launch-screen .panel__cta {
     font-size: 14px;
     font-size: 0.875rem;
     line-height: 1.71429;
-    margin-bottom: 0;
   }
   .launch-screen .panel__head--bottom {
     margin-bottom: 0;
   }
-  .launch-screen .panel {
-    padding: 9px 13.5px;
-    padding:  0.5625rem 0.84375rem;
-  }
+  .launch-screen .panel,
   .launch-screen .panel--slide {
-    padding: 9px 13.5px;
-    padding:  0.5625rem 0.84375rem;
+    padding: 11.7px 22.5px;
+    padding:  0.73125rem 1.40625rem;
   }
   .launch-screen .bar {
     margin-top: 2.5vh;
@@ -3304,7 +3323,12 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
     height:  6.75rem;
     float: left;
   }
+  .launch-screen .panel--slide .panel__head {
+    font-size: 1.125rem;
+    line-height: 1.33333;
+  }
   .launch-screen .panel__head--bottom {
+    bottom: auto;
     position: relative;
   }
 }
@@ -3313,7 +3337,7 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
   height: 100%;
 }
 
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 641px) {
   .launch-screen .slider:not(.slick-initialized) {
     display: -webkit-box;
     display: -moz-box;
