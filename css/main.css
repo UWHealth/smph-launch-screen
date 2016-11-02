@@ -1592,8 +1592,8 @@ table, p, address, pre {
   overflow: hidden;
   padding: 0;
   position: absolute;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
 }
 
 @media only screen and (max-width: 730px) {
@@ -2001,7 +2001,7 @@ q:first-child {
 .hero__logo {
   display: inline-block;
   text-align: center;
-  opacity: .8;
+  opacity: .95;
 }
 
 @media only screen and (max-height: 900px) {
@@ -2515,10 +2515,10 @@ Applying the `btn` class to anything will make it look like a button. Always dec
   text-align: center;
   cursor: pointer;
   background-color: #c5050c;
-  -webkit-transition: -webkit-box-shadow .2s ease-in-out;
-  transition: -webkit-box-shadow .2s ease-in-out;
-  transition: box-shadow .2s ease-in-out;
-  transition: box-shadow .2s ease-in-out, -webkit-box-shadow .2s ease-in-out, -moz-box-shadow .2s ease-in-out;
+  -webkit-transition: -webkit-box-shadow .15s ease-out;
+  transition: -webkit-box-shadow .15s ease-out;
+  transition: box-shadow .15s ease-out;
+  transition: box-shadow .15s ease-out, -webkit-box-shadow .15s ease-out, -moz-box-shadow .15s ease-out;
 }
 
 .btn:focus {
@@ -2989,6 +2989,15 @@ Panels require a modifier tag to gain most of their style (background and text c
   color: #c5050c;
 }
 
+.panel--link.panel--white:hover {
+  background-color: #fbfbfb;
+  color: #de070e !important;
+}
+
+.panel--link.panel--red:hover {
+  background-color: #d2060d !important;
+}
+
 .panel--dust-2 {
   background-image: url("../images/dust-overlay2.png");
 }
@@ -3000,23 +3009,22 @@ Panels require a modifier tag to gain most of their style (background and text c
   z-index: 1;
 }
 
+.panel--elevated.panel--link:hover, .panel--elevated.panel--link:focus {
+  -webkit-box-shadow: 0 2px 16px 5px rgba(98, 59, 61, 0.4);
+     -moz-box-shadow: 0 2px 16px 5px rgba(98, 59, 61, 0.4);
+          box-shadow: 0 2px 16px 5px rgba(98, 59, 61, 0.4);
+}
+
 .panel--link {
   display: block;
   top: 0;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all .1s ease-out;
+  transition: all .1s ease-out;
 }
 
 .panel--link:hover,
 .panel--link:focus {
   text-decoration: none;
-  -webkit-transform: translateY(-1px);
-     -moz-transform: translateY(-1px);
-      -ms-transform: translateY(-1px);
-          transform: translateY(-1px);
-  -webkit-box-shadow: 0 15px 26px -3px rgba(98, 59, 61, 0.25), 0 3px 25px -25px rgba(73, 73, 73, 0.25), 0 3px 10px 2px rgba(73, 73, 73, 0.13);
-     -moz-box-shadow: 0 15px 26px -3px rgba(98, 59, 61, 0.25), 0 3px 25px -25px rgba(73, 73, 73, 0.25), 0 3px 10px 2px rgba(73, 73, 73, 0.13);
-          box-shadow: 0 15px 26px -3px rgba(98, 59, 61, 0.25), 0 3px 25px -25px rgba(73, 73, 73, 0.25), 0 3px 10px 2px rgba(73, 73, 73, 0.13);
 }
 
 .panel--link:active {
@@ -3215,10 +3223,10 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
   -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
      -moz-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
           box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
-  -webkit-transition: opacity .1s ease-in, -webkit-box-shadow .2s ease-in-out;
-  transition: opacity .1s ease-in, -webkit-box-shadow .2s ease-in-out;
-  transition: opacity .1s ease-in, box-shadow .2s ease-in-out;
-  transition: opacity .1s ease-in, box-shadow .2s ease-in-out, -webkit-box-shadow .2s ease-in-out, -moz-box-shadow .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-out, -webkit-box-shadow .15s ease-out;
+  transition: opacity .2s ease-out, -webkit-box-shadow .15s ease-out;
+  transition: opacity .2s ease-out, box-shadow .15s ease-out;
+  transition: opacity .2s ease-out, box-shadow .15s ease-out, -webkit-box-shadow .15s ease-out, -moz-box-shadow .15s ease-out;
 }
 
 .slick-arrow.slick-disabled {
@@ -3295,9 +3303,19 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
   }
   .launch-screen .panel,
   .launch-screen .panel--slide {
-    padding: 11.7px 22.5px;
-    padding:  0.73125rem 1.40625rem;
+    padding: 11.7px 20.25px;
+    padding:  0.73125rem 1.26562rem;
   }
+}
+
+@media only screen and (max-height: 650px) and (max-width: 480px) {
+  .launch-screen .panel,
+  .launch-screen .panel--slide {
+    padding:  0.39375rem 0.5625rem;
+  }
+}
+
+@media only screen and (max-height: 650px) {
   .launch-screen .bar {
     margin-top: 2.5vh;
   }
@@ -3399,8 +3417,8 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
 }
 
 .txt-small {
-  font-size: 14px !important;
-  font-size: 0.875rem !important;
+  font-size: 14px!important;
+  font-size: 0.875rem!important;
   line-height: 1.71429 !important;
 }
 
@@ -3618,103 +3636,103 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
 }
 
 .space {
-  margin: 18px !important;
-  margin:  1.125rem !important;
+  margin: 18px!important;
+  margin:  1.125rem!important;
 }
 
 .space_t, .space_v {
-  margin-top: 18px !important;
-  margin-top:  1.125rem !important;
+  margin-top: 18px!important;
+  margin-top:  1.125rem!important;
 }
 
 .space_l, .space_h {
-  margin-left: 30px !important;
-  margin-left:  1.875rem !important;
+  margin-left: 30px!important;
+  margin-left:  1.875rem!important;
 }
 
 .space_b, .space_v {
-  margin-bottom: 18px !important;
-  margin-bottom:  1.125rem !important;
+  margin-bottom: 18px!important;
+  margin-bottom:  1.125rem!important;
 }
 
 .space_r, .space_h {
-  margin-right: 30px !important;
-  margin-right:  1.875rem !important;
+  margin-right: 30px!important;
+  margin-right:  1.875rem!important;
 }
 
 .space_half {
-  margin: 9px !important;
-  margin:  0.5625rem !important;
+  margin: 9px!important;
+  margin:  0.5625rem!important;
 }
 
 .space_t_half, .space_v_half {
-  margin-top: 9px !important;
-  margin-top:  0.5625rem !important;
+  margin-top: 9px!important;
+  margin-top:  0.5625rem!important;
 }
 
 .space_l_half, .space_h_half {
-  margin-left: 15px !important;
-  margin-left:  0.9375rem !important;
+  margin-left: 15px!important;
+  margin-left:  0.9375rem!important;
 }
 
 .space_b_half, .space_v_half {
-  margin-bottom: 9px !important;
-  margin-bottom:  0.5625rem !important;
+  margin-bottom: 9px!important;
+  margin-bottom:  0.5625rem!important;
 }
 
 .space_r_half, .space_h_half {
-  margin-right: 15px !important;
-  margin-right:  0.9375rem !important;
+  margin-right: 15px!important;
+  margin-right:  0.9375rem!important;
 }
 
 .space_neg {
-  margin: -18px !important;
-  margin:  -1.125rem !important;
+  margin: -18px!important;
+  margin:  -1.125rem!important;
 }
 
 .space_t_neg, .space_v_neg {
-  margin-top: -18px !important;
-  margin-top:  -1.125rem !important;
+  margin-top: -18px!important;
+  margin-top:  -1.125rem!important;
 }
 
 .space_l_neg, .space_h_neg {
-  margin-left: -30px !important;
-  margin-left:  -1.875rem !important;
+  margin-left: -30px!important;
+  margin-left:  -1.875rem!important;
 }
 
 .space_b_neg, .space_v_neg {
-  margin-bottom: -18px !important;
-  margin-bottom:  -1.125rem !important;
+  margin-bottom: -18px!important;
+  margin-bottom:  -1.125rem!important;
 }
 
 .space_r_neg, .space_h_neg {
-  margin-right: -30px !important;
-  margin-right:  -1.875rem !important;
+  margin-right: -30px!important;
+  margin-right:  -1.875rem!important;
 }
 
 .space_2 {
-  margin: 36px !important;
-  margin:  2.25rem !important;
+  margin: 36px!important;
+  margin:  2.25rem!important;
 }
 
 .space_t_2, .space_v_2 {
-  margin-top: 36px !important;
-  margin-top:  2.25rem !important;
+  margin-top: 36px!important;
+  margin-top:  2.25rem!important;
 }
 
 .space_l_2, .space_h_2 {
-  margin-left: 60px !important;
-  margin-left:  3.75rem !important;
+  margin-left: 60px!important;
+  margin-left:  3.75rem!important;
 }
 
 .space_b_2, .space_v_2 {
-  margin-bottom: 36px !important;
-  margin-bottom:  2.25rem !important;
+  margin-bottom: 36px!important;
+  margin-bottom:  2.25rem!important;
 }
 
 .space_r_2, .space_h_2 {
-  margin-right: 60px !important;
-  margin-right:  3.75rem !important;
+  margin-right: 60px!important;
+  margin-right:  3.75rem!important;
 }
 
 .pad_0 {
@@ -3738,78 +3756,78 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
 }
 
 .pad {
-  padding: 18px !important;
-  padding:  1.125rem !important;
+  padding: 18px!important;
+  padding:  1.125rem!important;
 }
 
 .pad_t, .pad_v {
-  padding-top: 18px !important;
-  padding-top:  1.125rem !important;
+  padding-top: 18px!important;
+  padding-top:  1.125rem!important;
 }
 
 .pad_l, .pad_h {
-  padding-left: 30px !important;
-  padding-left:  1.875rem !important;
+  padding-left: 30px!important;
+  padding-left:  1.875rem!important;
 }
 
 .pad_b, .pad_v {
-  padding-bottom: 18px !important;
-  padding-bottom:  1.125rem !important;
+  padding-bottom: 18px!important;
+  padding-bottom:  1.125rem!important;
 }
 
 .pad_r, .pad_h {
-  padding-right: 30px !important;
-  padding-right:  1.875rem !important;
+  padding-right: 30px!important;
+  padding-right:  1.875rem!important;
 }
 
 .pad_half {
-  padding: 9px !important;
-  padding:  0.5625rem !important;
+  padding: 9px!important;
+  padding:  0.5625rem!important;
 }
 
 .pad_t_half, .pad_v_half {
-  padding-top: 9px !important;
-  padding-top:  0.5625rem !important;
+  padding-top: 9px!important;
+  padding-top:  0.5625rem!important;
 }
 
 .pad_l_half, .pad_h_half {
-  padding-left: 15px !important;
-  padding-left:  0.9375rem !important;
+  padding-left: 15px!important;
+  padding-left:  0.9375rem!important;
 }
 
 .pad_b_half, .pad_v_half {
-  padding-bottom: 9px !important;
-  padding-bottom:  0.5625rem !important;
+  padding-bottom: 9px!important;
+  padding-bottom:  0.5625rem!important;
 }
 
 .pad_r_half, .pad_h_half {
-  padding-right: 15px !important;
-  padding-right:  0.9375rem !important;
+  padding-right: 15px!important;
+  padding-right:  0.9375rem!important;
 }
 
 .pad_2 {
-  padding: 36px !important;
-  padding:  2.25rem !important;
+  padding: 36px!important;
+  padding:  2.25rem!important;
 }
 
 .pad_t_2, .pad_v_2 {
-  padding-top: 36px !important;
-  padding-top:  2.25rem !important;
+  padding-top: 36px!important;
+  padding-top:  2.25rem!important;
 }
 
 .pad_l_2, .pad_h_2 {
-  padding-left: 60px !important;
-  padding-left:  3.75rem !important;
+  padding-left: 60px!important;
+  padding-left:  3.75rem!important;
 }
 
 .pad_b_2, .pad_v_2 {
-  padding-bottom: 36px !important;
-  padding-bottom:  2.25rem !important;
+  padding-bottom: 36px!important;
+  padding-bottom:  2.25rem!important;
 }
 
 .pad_r_2, .pad_h_2 {
-  padding-right: 60px !important;
-  padding-right:  3.75rem !important;
+  padding-right: 60px!important;
+  padding-right:  3.75rem!important;
 }
 
 @media only screen and (max-width: 730px) {
@@ -3829,64 +3847,64 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
     margin-right: 0 !important;
   }
   .smalls_space {
-    margin:  1.125rem !important;
+    margin:  1.125rem!important;
   }
   .smalls_space_t, .smalls_space_v {
-    margin-top:  1.125rem !important;
+    margin-top:  1.125rem!important;
   }
   .smalls_space_l, .smalls_space_h {
-    margin-left:  1.875rem !important;
+    margin-left:  1.875rem!important;
   }
   .smalls_space_b, .smalls_space_v {
-    margin-bottom:  1.125rem !important;
+    margin-bottom:  1.125rem!important;
   }
   .smalls_space_r, .smalls_space_h {
-    margin-right:  1.875rem !important;
+    margin-right:  1.875rem!important;
   }
   .smalls_space_half {
-    margin:  0.5625rem !important;
+    margin:  0.5625rem!important;
   }
   .smalls_space_t_half, .smalls_space_v_half {
-    margin-top:  0.5625rem !important;
+    margin-top:  0.5625rem!important;
   }
   .smalls_space_l_half, .smalls_space_h_half {
-    margin-left:  0.9375rem !important;
+    margin-left:  0.9375rem!important;
   }
   .smalls_space_b_half, .smalls_space_v_half {
-    margin-bottom:  0.5625rem !important;
+    margin-bottom:  0.5625rem!important;
   }
   .smalls_space_r_half, .smalls_space_h_half {
-    margin-right:  0.9375rem !important;
+    margin-right:  0.9375rem!important;
   }
   .smalls_space_neg {
-    margin:  -1.125rem !important;
+    margin:  -1.125rem!important;
   }
   .smalls_space_t_neg, .smalls_space_v_neg {
-    margin-top:  -1.125rem !important;
+    margin-top:  -1.125rem!important;
   }
   .smalls_space_l_neg, .smalls_space_h_neg {
-    margin-left:  -1.875rem !important;
+    margin-left:  -1.875rem!important;
   }
   .smalls_space_b_neg, .smalls_space_v_neg {
-    margin-bottom:  -1.125rem !important;
+    margin-bottom:  -1.125rem!important;
   }
   .smalls_space_r_neg, .smalls_space_h_neg {
-    margin-right:  -1.875rem !important;
+    margin-right:  -1.875rem!important;
   }
   .smalls_space_2 {
-    margin:  2.25rem !important;
+    margin:  2.25rem!important;
   }
   .smalls_space_t_2, .smalls_space_v_2 {
-    margin-top:  2.25rem !important;
+    margin-top:  2.25rem!important;
   }
   .smalls_space_l_2, .smalls_space_h_2 {
-    margin-left:  3.75rem !important;
+    margin-left:  3.75rem!important;
   }
   .smalls_space_b_2, .smalls_space_v_2 {
-    margin-bottom:  2.25rem !important;
+    margin-bottom:  2.25rem!important;
   }
   .smalls_space_r_2, .smalls_space_h_2 {
-    margin-right:  3.75rem !important;
+    margin-right:  3.75rem!important;
   }
   .smalls_pad_0 {
     padding: 0 !important;
@@ -3904,49 +3922,49 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
     padding-right: 0 !important;
   }
   .smalls_pad {
-    padding:  1.125rem !important;
+    padding:  1.125rem!important;
   }
   .smalls_pad_t, .smalls_pad_v {
-    padding-top:  1.125rem !important;
+    padding-top:  1.125rem!important;
   }
   .smalls_pad_l, .smalls_pad_h {
-    padding-left:  1.875rem !important;
+    padding-left:  1.875rem!important;
   }
   .smalls_pad_b, .smalls_pad_v {
-    padding-bottom:  1.125rem !important;
+    padding-bottom:  1.125rem!important;
   }
   .smalls_pad_r, .smalls_pad_h {
-    padding-right:  1.875rem !important;
+    padding-right:  1.875rem!important;
   }
   .smalls_pad_half {
-    padding:  0.5625rem !important;
+    padding:  0.5625rem!important;
   }
   .smalls_pad_t_half, .smalls_pad_v_half {
-    padding-top:  0.5625rem !important;
+    padding-top:  0.5625rem!important;
   }
   .smalls_pad_l_half, .smalls_pad_h_half {
-    padding-left:  0.9375rem !important;
+    padding-left:  0.9375rem!important;
   }
   .smalls_pad_b_half, .smalls_pad_v_half {
-    padding-bottom:  0.5625rem !important;
+    padding-bottom:  0.5625rem!important;
   }
   .smalls_pad_r_half, .smalls_pad_h_half {
-    padding-right:  0.9375rem !important;
+    padding-right:  0.9375rem!important;
   }
   .smalls_pad_2 {
-    padding:  2.25rem !important;
+    padding:  2.25rem!important;
   }
   .smalls_pad_t_2, .smalls_pad_v_2 {
-    padding-top:  2.25rem !important;
+    padding-top:  2.25rem!important;
   }
   .smalls_pad_l_2, .smalls_pad_h_2 {
-    padding-left:  3.75rem !important;
+    padding-left:  3.75rem!important;
   }
   .smalls_pad_b_2, .smalls_pad_v_2 {
-    padding-bottom:  2.25rem !important;
+    padding-bottom:  2.25rem!important;
   }
   .smalls_pad_r_2, .smalls_pad_h_2 {
-    padding-right:  3.75rem !important;
+    padding-right:  3.75rem!important;
   }
 }
 
@@ -3967,64 +3985,64 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
     margin-right: 0 !important;
   }
   .bigs_space {
-    margin:  1.125rem !important;
+    margin:  1.125rem!important;
   }
   .bigs_space_t, .bigs_space_v {
-    margin-top:  1.125rem !important;
+    margin-top:  1.125rem!important;
   }
   .bigs_space_l, .bigs_space_h {
-    margin-left:  1.875rem !important;
+    margin-left:  1.875rem!important;
   }
   .bigs_space_b, .bigs_space_v {
-    margin-bottom:  1.125rem !important;
+    margin-bottom:  1.125rem!important;
   }
   .bigs_space_r, .bigs_space_h {
-    margin-right:  1.875rem !important;
+    margin-right:  1.875rem!important;
   }
   .bigs_space_half {
-    margin:  0.5625rem !important;
+    margin:  0.5625rem!important;
   }
   .bigs_space_t_half, .bigs_space_v_half {
-    margin-top:  0.5625rem !important;
+    margin-top:  0.5625rem!important;
   }
   .bigs_space_l_half, .bigs_space_h_half {
-    margin-left:  0.9375rem !important;
+    margin-left:  0.9375rem!important;
   }
   .bigs_space_b_half, .bigs_space_v_half {
-    margin-bottom:  0.5625rem !important;
+    margin-bottom:  0.5625rem!important;
   }
   .bigs_space_r_half, .bigs_space_h_half {
-    margin-right:  0.9375rem !important;
+    margin-right:  0.9375rem!important;
   }
   .bigs_space_neg {
-    margin:  -1.125rem !important;
+    margin:  -1.125rem!important;
   }
   .bigs_space_t_neg, .bigs_space_v_neg {
-    margin-top:  -1.125rem !important;
+    margin-top:  -1.125rem!important;
   }
   .bigs_space_l_neg, .bigs_space_h_neg {
-    margin-left:  -1.875rem !important;
+    margin-left:  -1.875rem!important;
   }
   .bigs_space_b_neg, .bigs_space_v_neg {
-    margin-bottom:  -1.125rem !important;
+    margin-bottom:  -1.125rem!important;
   }
   .bigs_space_r_neg, .bigs_space_h_neg {
-    margin-right:  -1.875rem !important;
+    margin-right:  -1.875rem!important;
   }
   .bigs_space_2 {
-    margin:  2.25rem !important;
+    margin:  2.25rem!important;
   }
   .bigs_space_t_2, .bigs_space_v_2 {
-    margin-top:  2.25rem !important;
+    margin-top:  2.25rem!important;
   }
   .bigs_space_l_2, .bigs_space_h_2 {
-    margin-left:  3.75rem !important;
+    margin-left:  3.75rem!important;
   }
   .bigs_space_b_2, .bigs_space_v_2 {
-    margin-bottom:  2.25rem !important;
+    margin-bottom:  2.25rem!important;
   }
   .bigs_space_r_2, .bigs_space_h_2 {
-    margin-right:  3.75rem !important;
+    margin-right:  3.75rem!important;
   }
   .bigs_pad_0 {
     padding: 0 !important;
@@ -4042,49 +4060,49 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
     padding-right: 0 !important;
   }
   .bigs_pad {
-    padding:  1.125rem !important;
+    padding:  1.125rem!important;
   }
   .bigs_pad_t, .bigs_pad_v {
-    padding-top:  1.125rem !important;
+    padding-top:  1.125rem!important;
   }
   .bigs_pad_l, .bigs_pad_h {
-    padding-left:  1.875rem !important;
+    padding-left:  1.875rem!important;
   }
   .bigs_pad_b, .bigs_pad_v {
-    padding-bottom:  1.125rem !important;
+    padding-bottom:  1.125rem!important;
   }
   .bigs_pad_r, .bigs_pad_h {
-    padding-right:  1.875rem !important;
+    padding-right:  1.875rem!important;
   }
   .bigs_pad_half {
-    padding:  0.5625rem !important;
+    padding:  0.5625rem!important;
   }
   .bigs_pad_t_half, .bigs_pad_v_half {
-    padding-top:  0.5625rem !important;
+    padding-top:  0.5625rem!important;
   }
   .bigs_pad_l_half, .bigs_pad_h_half {
-    padding-left:  0.9375rem !important;
+    padding-left:  0.9375rem!important;
   }
   .bigs_pad_b_half, .bigs_pad_v_half {
-    padding-bottom:  0.5625rem !important;
+    padding-bottom:  0.5625rem!important;
   }
   .bigs_pad_r_half, .bigs_pad_h_half {
-    padding-right:  0.9375rem !important;
+    padding-right:  0.9375rem!important;
   }
   .bigs_pad_2 {
-    padding:  2.25rem !important;
+    padding:  2.25rem!important;
   }
   .bigs_pad_t_2, .bigs_pad_v_2 {
-    padding-top:  2.25rem !important;
+    padding-top:  2.25rem!important;
   }
   .bigs_pad_l_2, .bigs_pad_h_2 {
-    padding-left:  3.75rem !important;
+    padding-left:  3.75rem!important;
   }
   .bigs_pad_b_2, .bigs_pad_v_2 {
-    padding-bottom:  2.25rem !important;
+    padding-bottom:  2.25rem!important;
   }
   .bigs_pad_r_2, .bigs_pad_h_2 {
-    padding-right:  3.75rem !important;
+    padding-right:  3.75rem!important;
   }
 }
 
@@ -4105,64 +4123,64 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
     margin-right: 0 !important;
   }
   .desk_space {
-    margin:  1.125rem !important;
+    margin:  1.125rem!important;
   }
   .desk_space_t, .desk_space_v {
-    margin-top:  1.125rem !important;
+    margin-top:  1.125rem!important;
   }
   .desk_space_l, .desk_space_h {
-    margin-left:  1.875rem !important;
+    margin-left:  1.875rem!important;
   }
   .desk_space_b, .desk_space_v {
-    margin-bottom:  1.125rem !important;
+    margin-bottom:  1.125rem!important;
   }
   .desk_space_r, .desk_space_h {
-    margin-right:  1.875rem !important;
+    margin-right:  1.875rem!important;
   }
   .desk_space_half {
-    margin:  0.5625rem !important;
+    margin:  0.5625rem!important;
   }
   .desk_space_t_half, .desk_space_v_half {
-    margin-top:  0.5625rem !important;
+    margin-top:  0.5625rem!important;
   }
   .desk_space_l_half, .desk_space_h_half {
-    margin-left:  0.9375rem !important;
+    margin-left:  0.9375rem!important;
   }
   .desk_space_b_half, .desk_space_v_half {
-    margin-bottom:  0.5625rem !important;
+    margin-bottom:  0.5625rem!important;
   }
   .desk_space_r_half, .desk_space_h_half {
-    margin-right:  0.9375rem !important;
+    margin-right:  0.9375rem!important;
   }
   .desk_space_neg {
-    margin:  -1.125rem !important;
+    margin:  -1.125rem!important;
   }
   .desk_space_t_neg, .desk_space_v_neg {
-    margin-top:  -1.125rem !important;
+    margin-top:  -1.125rem!important;
   }
   .desk_space_l_neg, .desk_space_h_neg {
-    margin-left:  -1.875rem !important;
+    margin-left:  -1.875rem!important;
   }
   .desk_space_b_neg, .desk_space_v_neg {
-    margin-bottom:  -1.125rem !important;
+    margin-bottom:  -1.125rem!important;
   }
   .desk_space_r_neg, .desk_space_h_neg {
-    margin-right:  -1.875rem !important;
+    margin-right:  -1.875rem!important;
   }
   .desk_space_2 {
-    margin:  2.25rem !important;
+    margin:  2.25rem!important;
   }
   .desk_space_t_2, .desk_space_v_2 {
-    margin-top:  2.25rem !important;
+    margin-top:  2.25rem!important;
   }
   .desk_space_l_2, .desk_space_h_2 {
-    margin-left:  3.75rem !important;
+    margin-left:  3.75rem!important;
   }
   .desk_space_b_2, .desk_space_v_2 {
-    margin-bottom:  2.25rem !important;
+    margin-bottom:  2.25rem!important;
   }
   .desk_space_r_2, .desk_space_h_2 {
-    margin-right:  3.75rem !important;
+    margin-right:  3.75rem!important;
   }
   .desk_pad_0 {
     padding: 0 !important;
@@ -4180,49 +4198,49 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
     padding-right: 0 !important;
   }
   .desk_pad {
-    padding:  1.125rem !important;
+    padding:  1.125rem!important;
   }
   .desk_pad_t, .desk_pad_v {
-    padding-top:  1.125rem !important;
+    padding-top:  1.125rem!important;
   }
   .desk_pad_l, .desk_pad_h {
-    padding-left:  1.875rem !important;
+    padding-left:  1.875rem!important;
   }
   .desk_pad_b, .desk_pad_v {
-    padding-bottom:  1.125rem !important;
+    padding-bottom:  1.125rem!important;
   }
   .desk_pad_r, .desk_pad_h {
-    padding-right:  1.875rem !important;
+    padding-right:  1.875rem!important;
   }
   .desk_pad_half {
-    padding:  0.5625rem !important;
+    padding:  0.5625rem!important;
   }
   .desk_pad_t_half, .desk_pad_v_half {
-    padding-top:  0.5625rem !important;
+    padding-top:  0.5625rem!important;
   }
   .desk_pad_l_half, .desk_pad_h_half {
-    padding-left:  0.9375rem !important;
+    padding-left:  0.9375rem!important;
   }
   .desk_pad_b_half, .desk_pad_v_half {
-    padding-bottom:  0.5625rem !important;
+    padding-bottom:  0.5625rem!important;
   }
   .desk_pad_r_half, .desk_pad_h_half {
-    padding-right:  0.9375rem !important;
+    padding-right:  0.9375rem!important;
   }
   .desk_pad_2 {
-    padding:  2.25rem !important;
+    padding:  2.25rem!important;
   }
   .desk_pad_t_2, .desk_pad_v_2 {
-    padding-top:  2.25rem !important;
+    padding-top:  2.25rem!important;
   }
   .desk_pad_l_2, .desk_pad_h_2 {
-    padding-left:  3.75rem !important;
+    padding-left:  3.75rem!important;
   }
   .desk_pad_b_2, .desk_pad_v_2 {
-    padding-bottom:  2.25rem !important;
+    padding-bottom:  2.25rem!important;
   }
   .desk_pad_r_2, .desk_pad_h_2 {
-    padding-right:  3.75rem !important;
+    padding-right:  3.75rem!important;
   }
 }
 

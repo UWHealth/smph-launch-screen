@@ -48,7 +48,11 @@
 
         .panel,
         .panel--slide {
-            @include type-space(padding, .65 .75);
+            @include type-space(padding, .65 .675);
+
+            @include mq(small) {
+                @include type-space(padding, .35 .3);
+            }
         }
 
         .bar {

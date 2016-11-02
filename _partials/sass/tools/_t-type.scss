@@ -101,16 +101,13 @@ Takes a pixel value and creates a property with a `rem` value. If `$$rem-px-fall
 // REM generator
 // Used to create a property with a rem value and PX fallback
 @mixin px-to-rems($property, $sizes, $important: false, $base-font: $base-font-size) {
-	$important_val: '';
+	$important: if($important, '!important', null);
 	$rem-sizes: (null);
 	$px-sizes: (null);
 
-	@if $important {
-		$important_val: ' !important';
-	}
-
 	//Loop through sizes, combining them into single lists
 	@each $size in $sizes {
+
 		@if $size == '' {
 			$size: null;
 			$px-sizes: join($px-sizes, $size, space);
@@ -127,13 +124,14 @@ Takes a pixel value and creates a property with a `rem` value. If `$$rem-px-fall
 			$px-sizes: join($px-sizes, $size, space);
 			$size: if($size, px-to-rems($size, $base-font), '');
 		}
+
 		$rem-sizes: join($rem-sizes, $size, space);
 	}
 
 	@if $rem-px-fallback {
-		#{$property}:#{$px-sizes}#{$important_val};
+		#{$property}:#{$px-sizes}#{$important};
 	}
-	#{$property}:#{$rem-sizes}#{$important_val};
+	#{$property}:#{$rem-sizes}#{$important};
 
 }
 
@@ -241,6 +239,7 @@ Output REM values using the typographic grid. This is the prefered method of add
     	@each $multiple in $multipliers {
 
 			$value: $multiple;
+
 			@if $value == 'auto' {
 				$values: append($values, $value);
 	    		$multiple-index: $multiple-index + 1;

@@ -83,7 +83,7 @@ $hero-mq: 'max-height' 900px;
 .hero__logo {
 	display: inline-block;
 	text-align: center;
-	opacity: .8;
+	opacity: .95;
 
 	@include mq($hero-mq) {
 		max-width: 60px;

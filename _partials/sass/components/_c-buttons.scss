@@ -23,7 +23,7 @@ Applying the `btn` class to anything will make it look like a button. Always dec
     text-align: center;
     cursor: pointer;
     background-color: color(badgers);
-    transition: box-shadow .2s ease-in-out;
+    transition: box-shadow .15s ease-out;
 
     &:focus {
         outline: none;
