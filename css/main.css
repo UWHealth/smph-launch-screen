@@ -1577,7 +1577,7 @@ textarea,
   clip: auto;
 }
 
-table, p, address, pre {
+p, address, pre {
   margin: 0 0 18px;
   margin:  0rem 0rem 1.125rem;
 }
@@ -1596,157 +1596,6 @@ table, p, address, pre {
   transition: all .25s ease-in-out;
 }
 
-@media only screen and (max-width: 730px) {
-  .table_scroll,
-  .table_pin {
-    font-size: 0.875rem;
-    line-height: 1.71429;
-  }
-}
-
-input {
-  -webkit-border-radius: 0;
-}
-
-input[type="button"], input[type="reset"], input[type="submit"] {
-  -webkit-appearance: button;
-}
-
-input[type="number"] {
-  width: auto;
-}
-
-input[type="search"] {
-  -webkit-appearance: textfield;
-}
-
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-legend {
-  display: table;
-  white-space: normal;
-}
-
-button,
-input {
-  line-height: normal;
-  font-size: inherit;
-}
-
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  border: 0;
-  -webkit-appearance: button;
-  cursor: pointer;
-  *overflow: visible;
-}
-
-button,
-input,
-select,
-textarea {
-  background-color: #fff;
-}
-
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 0;
-  *height: 13px;
-  *width: 13px;
-}
-
-button[disabled],
-input[disabled] {
-  cursor: default !important;
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-input[type="search"] {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-select input[type="submit"],
-input[type="button"],
-input[type="image"],
-input[type="reset"] {
-  -moz-border-radius: 0;
-       border-radius: 0;
-  -webkit-border-radius: 0;
-}
-
-ul,
-ol,
-dl,
-menu {
-  margin: 0 0 18px 30px;
-  margin:  0rem 0rem 1.125rem 1.875rem;
-}
-
-li > ul,
-li > ol {
-  margin-bottom: 0;
-}
-
-nav ol,
-nav ul {
-  margin-left: 0;
-}
-
-table {
-  width: 100%;
-  background-color: transparent;
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-th,
-td {
-  padding: 18px 0 9px;
-  padding:  1.125rem 0rem 0.5625rem;
-  text-align: left;
-  vertical-align: top;
-  border: 0;
-  border-bottom: 1px;
-  border-top-width: 0px;
-  border-color: #E4E4E4;
-  border-style: solid;
-}
-
-th {
-  font-weight: bold;
-}
-
-thead th {
-  vertical-align: bottom;
-  padding: 18px 0 0;
-  padding:  1.125rem 0rem 0rem;
-}
-
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   margin-bottom: 18px;
@@ -1754,9 +1603,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 54px;
-  font-size: 3.375rem;
-  line-height: 1.11111;
+  font-size: 48px;
+  font-size: 3rem;
+  line-height: 1;
 }
 
 h2 {
@@ -1935,7 +1784,7 @@ q:first-child {
   background-position: top center;
 }
 
-@media only screen and (max-height: 900px) {
+@media only screen and (max-height: 915px) {
   .hero {
     height: 40vh;
   }
@@ -1952,7 +1801,7 @@ q:first-child {
   background-image: linear-gradient(to bottom, rgba(40, 39, 40, 0.4), transparent 60%);
 }
 
-@media only screen and (max-height: 900px) {
+@media only screen and (max-height: 915px) {
   .hero__body {
     padding:  0.5625rem 0rem 0.5625rem;
     padding: 2vh 0;
@@ -1992,8 +1841,9 @@ q:first-child {
   padding-top: 1.5%;
 }
 
-@media only screen and (max-height: 900px) {
+@media only screen and (max-height: 915px) {
   .hero__head {
+    padding-top: .5%;
     padding-bottom: .5%;
   }
 }
@@ -2004,7 +1854,7 @@ q:first-child {
   opacity: .95;
 }
 
-@media only screen and (max-height: 900px) {
+@media only screen and (max-height: 915px) {
   .hero__logo {
     max-width: 60px;
   }
@@ -2043,7 +1893,7 @@ q:first-child {
           flex: 0 1 auto;
 }
 
-@media only screen and (max-height: 900px) {
+@media only screen and (max-height: 915px) {
   .tier__1 {
     min-height: 47vh;
   }
@@ -2351,146 +2201,6 @@ Adding the modifier `--flex` to any grid will give `grid__items` flex-box behavi
 }
 
 /* SG
-
-# Layout/Media object
-
-@priority 2
-
-Isolates an image from text wrapping underneath. Useful for creating an association between an image and text. Often used with an icon or avatar. Adding other classes to the `media__body` can create a more stylized version.
-
-```html_example
-<img class="media__media" src="http://placehold.it/300x48" alt="placeholder image">
-<p class="media__body">
-	Content that sits to the right of the image but will never wrap underneath the image to the left. Etiam porta sem malesuada magna mollis euismod. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-</p>
-
-```
-*/
-.media__media, .media__body {
-  overflow: hidden;
-  _overflow: visible;
-  zoom: 1;
-}
-
-.media__media {
-  float: left;
-}
-
-.media, .media__media, .media__media img, .media__body {
-  display: block;
-}
-
-.media {
-  width: 100%;
-  margin-bottom: 18px;
-  margin-bottom:  1.125rem;
-}
-
-.media__body {
-  padding-left: 15px;
-  padding-left:  0.9375rem;
-}
-
-/* SG
-
-# Layout/Arrangement object
-
-@priority 3
-
-Creates an image-content block that vertically aligns images and text (centered, bottom, or top).
-Children can be named four things:
-* `arrange__fit` or `arrange__media` will create a block that fits the width of its content (useful for images).
-* `arrange__fill` will fill the remaining space.
-* `arrange__body` are similar but have some default styling.
-
-You may also combine this with grid items like `row` and `column` if you wish to add gutters between elements.
-
-_NOTE: Do not mistake this for true grid items. This should only be used for the arrangement of a few items. It is "squishy", but not technically responsive._
-
-```html_example
-<div class="arrange">
-	<div class="arrange__media">
-		<img src="http://placehold.it/60x48" alt="placeholder image">
-	</div>
-	<div class="arrange__body">
-		Content that is vertically (middle) aligned with the image.
-	</div>
-</div>
-
-<!-- Bottom Arrangement -->
-<div class="arrange arrange--bottom">
-	<div class="arrange__media">
-		<img src="http://placehold.it/60x48" alt="placeholder image">
-	</div>
-	<div class="arrange__body">
-		Content that is bottom aligned to the image.
-	</div>
-</div>
-
-<!-- Equal width arrangement-->
-<div class="arrange arrange--equal">
-	<div class="arrange__fill">
-		Equal width columns.
-	</div>
-	<div class="arrange__fill">
-		<img class="show" src="http://placehold.it/120x72" alt="placeholder image" style="margin: auto;">
-	</div>
-	<div class="arrange__fill">
-		Can be as many columns as you want.
-	</div>
-</div>
-
-```
-*/
-.arrange {
-  table-layout: auto;
-  min-width: 100%;
-  display: table;
-  width: 100%;
-  margin-bottom: 18px;
-  margin-bottom:  1.125rem;
-}
-
-.arrange__fill, .arrange__fit, .arrange__media, .arrange__body {
-  display: table-cell;
-}
-
-.arrange__fill, .arrange__body {
-  width: 100%;
-}
-
-.arrange__media img, .arrange__fit img {
-  display: block;
-  max-width: none;
-}
-
-.arrange__body {
-  padding-left: 15px;
-  padding-left:  0.9375rem;
-}
-
-.arrange__media, .arrange__body, .arrange__fill, .arrange__fit {
-  vertical-align: middle;
-}
-
-.arrange--top > .arrange__media, .arrange--top > .arrange__body, .arrange--top > .arrange__fill, .arrange--top > .arrange__fit {
-  vertical-align: top;
-}
-
-.arrange--bottom > .arrange__media, .arrange--bottom > .arrange__body, .arrange--bottom > .arrange__fill, .arrange--bottom > .arrange__fit {
-  vertical-align: bottom;
-}
-
-.arrange--equal {
-  table-layout: fixed;
-}
-
-.arrange--equal > .arrange__fill,
-.arrange--equal > .arrange__fit {
-  width: 1%;
-}
-
-/* SG
 # Buttons
 Applying the `btn` class to anything will make it look like a button. Always declare `type="button"` on `<button>` elements for proper accessibility.
 
@@ -2575,9 +2285,9 @@ Moving from `h6` up to `h1`, the heading font sizes get larger on a scale. For i
 }
 
 .h1 {
-  font-size: 54px;
-  font-size: 3.375rem;
-  line-height: 1.11111;
+  font-size: 48px;
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .h2 {
@@ -2667,273 +2377,6 @@ Moving from `h6` up to `h1`, the heading font sizes get larger on a scale. For i
   font-size: 6px;
   top: -9px;
   top:  -0.5625rem;
-}
-
-/* SG
-# Lists/Bordered Lists
-
-Creates a list with borders above and below each list item. Appending `list_bordered` with `_short` will make reduce the padding between each item.
-
-```html_example
-<ul class="list--bordered">
-    <li>List Item</li>
-    <li>List Item</li>
-    <li>List Item</li>
-</ul>
-
-<ul class="list--bordered--short">
-    <li>List Item</li>
-    <li>List Item</li>
-    <li>List Item</li>
-</ul>
-```
-*/
-[class*="list--bordered"] {
-  list-style: none;
-  margin-left: 0;
-  padding-top: 18px;
-  padding-top:  1.125rem;
-  padding-bottom: 18px;
-  padding-bottom:  1.125rem;
-}
-
-[class*="list--bordered"] > li {
-  list-style-image: none;
-  list-style-type: none;
-  margin-left: 0;
-}
-
-[class*="list--bordered"] > li {
-  border-top: 1px solid #E4E4E4;
-  padding-top: 18px;
-  padding-top:  1.125rem;
-  padding-bottom: 18px;
-  padding-bottom:  1.125rem;
-  margin-bottom: -1px;
-}
-
-[class*="list--bordered"] > li:first-child {
-  border-top-color: transparent;
-}
-
-.list--bordered--short > li {
-  padding-top: 9px;
-  padding-top:  0.5625rem;
-  padding-bottom: 9px;
-  padding-bottom:  0.5625rem;
-}
-
-/* SG
-# Lists/Inline Lists
-
-A list where each item is in a row, with spacing to the right of each item
-
-```html_example
-<ul class="list--inline">
-    <li>List Item</li>
-    <li>List Item</li>
-    <li>List Item</li>
-</ul>
-```
-*/
-.list--inline {
-  list-style: none;
-  margin-left: 0;
-}
-
-.list--inline > li {
-  list-style-image: none;
-  list-style-type: none;
-  margin-left: 0;
-}
-
-.list--inline > li {
-  display: inline-block;
-  padding-left: 0;
-  width: auto;
-  vertical-align: middle;
-  padding-right: 15px;
-  padding-right:  0.9375rem;
-}
-
-.list--inline > li:last-child {
-  padding-right: 0;
-}
-
-/* SG
-# Lists/Breadcrumbs
-
-A list where each item is in a row, with a &#x25B8; between each item.
-
-```html_example
-<ul class="breadcrumbs">
-    <li class="breadcrumb">List Item</li>
-    <li class="breadcrumb">List Item</li>
-    <li class="breadcrumb">List Item</li>
-</ul>
-```
-*/
-.breadcrumbs {
-  list-style: none;
-  margin-left: 0;
-  padding-right: 30px;
-  padding-right:  1.875rem;
-}
-
-.breadcrumbs > li {
-  list-style-image: none;
-  list-style-type: none;
-  margin-left: 0;
-}
-
-.breadcrumbs > li,
-.breadcrumb {
-  display: inline-block;
-  white-space: nowrap;
-  margin-left: 0;
-}
-
-.breadcrumbs > li a,
-.breadcrumb a {
-  display: block;
-}
-
-.breadcrumbs > li:after,
-.breadcrumb:after {
-  content: "\25B8";
-  display: inline-block;
-}
-
-/* SG
-# Lists/Navigation List
-
-A list of anchor tags that fill the space of their containers. Used when you need larger click/tap targets on a group on links.
-
-Also useful as a modifier class since it can be used on any container with anchors (doesn't have to be an `ol` or `ul`).
-
-```html_example
-<ul class="list--nav">
-    <li>
-        <a href="#">List Item</a>
-    </li>
-    <li>
-        <a href="#">List Item</a>
-    </li>
-    <li>
-        <a href="#">List Item</a>
-    </li>
-</ul>
-```
-*/
-.list--nav {
-  list-style: none;
-  margin-left: 0;
-}
-
-.list--nav > li {
-  list-style-image: none;
-  list-style-type: none;
-  margin-left: 0;
-}
-
-.list--nav a {
-  display: block;
-  padding-top: 9px;
-  padding-top:  0.5625rem;
-  padding-bottom: 9px;
-  padding-bottom:  0.5625rem;
-}
-
-.table_fixed {
-  table-layout: fixed;
-}
-
-.table_responsive thead + tbody td:before {
-  content: attr(data-th) " ";
-  font-weight: 700;
-  padding-right: .25em;
-  display: none;
-}
-
-.table_striped th,
-.table_striped td {
-  padding-right: 15px;
-  padding-right:  0.9375rem;
-  padding-left: 15px;
-  padding-left:  0.9375rem;
-  border-color: #dbdbdb;
-  border-style: solid;
-}
-
-.table_striped tr:nth-child(odd) td {
-  background-color: #E4E4E4;
-  background-color: rgba(228, 228, 228, 0.75);
-}
-
-@media only screen and (max-width: 730px) {
-  .table_wrapper, .table_responsive td,
-  .table_responsive th {
-    overflow: hidden;
-  }
-  .table_wrapper, .table_responsive td,
-  .table_responsive th {
-    position: relative;
-  }
-  .table_responsive td,
-  .table_responsive th, .table_pin th,
-  .table_pin td {
-    white-space: nowrap;
-  }
-  .table_wrapper {
-    margin-bottom:  1.125rem;
-    border: 1px solid #dbdbdb;
-    -moz-border-radius: 2px;
-         border-radius: 2px;
-  }
-  .table_responsive {
-    margin-bottom: 0;
-  }
-  .table_responsive td,
-  .table_responsive th {
-    padding-left:  0.46875rem;
-  }
-  .table_responsive th:first-child,
-  .table_responsive td:first-child,
-  .table_responsive td:first-child,
-  .table_responsive.table_pin td {
-    display: none;
-  }
-  .table_pin {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 25%;
-    background: #F7F7F7;
-    -webkit-box-shadow: 3px 0 2px rgba(142, 142, 146, 0.2);
-       -moz-box-shadow: 3px 0 2px rgba(142, 142, 146, 0.2);
-            box-shadow: 3px 0 2px rgba(142, 142, 146, 0.2);
-  }
-  .table_pin table {
-    table-layout: auto;
-    border-right: none;
-    border-left: none;
-    width: 100%;
-  }
-  .table_pin th,
-  .table_pin td {
-    padding-left:  0.28125rem;
-  }
-  .table_pin td:last-child {
-    border-bottom: 0;
-  }
-  .table_scroll,
-  .table_pin {
-    overflow: scroll;
-    overflow-y: hidden;
-  }
-  .table_scroll table {
-    margin-left: 25%;
-  }
 }
 
 /* SG
@@ -3058,7 +2501,7 @@ Panels require a modifier tag to gain most of their style (background and text c
   text-transform: uppercase;
   margin-bottom: 72px;
   margin-bottom:  4.5rem;
-  margin-bottom: 5.5vh;
+  margin-bottom: 9.5vh;
 }
 
 @media only screen and (max-width: 730px) {
@@ -3252,12 +2695,6 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
 }
 
 /* Dots */
-.editor_content ul {
-  list-style: bulleted;
-  margin-left: 30px;
-  margin-left:  1.875rem;
-}
-
 .launch-screen .hero .panel--flex {
   min-height: 24vh;
 }
@@ -3269,10 +2706,7 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
 @media only screen and (max-height: 750px) {
   .launch-screen .panel,
   .launch-screen .panel--slide {
-    padding:  0.84375rem 1.54688rem;
-  }
-  .launch-screen .panel__cta {
-    margin-bottom: 0;
+    padding:  0.92812rem 1.875rem;
   }
   .launch-screen .tier-2 .heading--underline {
     margin-bottom: 2vh;
@@ -3293,11 +2727,6 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
 }
 
 @media only screen and (max-height: 650px) {
-  .launch-screen .panel__cta {
-    font-size: 14px;
-    font-size: 0.875rem;
-    line-height: 1.71429;
-  }
   .launch-screen .panel__head--bottom {
     margin-bottom: 0;
   }
@@ -3400,6 +2829,17 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
   background-color: #f9f5f5;
 }
 
+@media only screen and (max-height: 780px), screen and (max-width: 730px) {
+  html, :root {
+    font-size: 14px;
+  }
+  .panel__cta {
+    font-size: 0.875rem;
+    line-height: 1.71429;
+    margin-bottom: 0;
+  }
+}
+
 .txt-center {
   text-align: center !important;
 }
@@ -3422,14 +2862,21 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
   line-height: 1.71429 !important;
 }
 
-.list_naked {
+.list--nav {
   list-style: none;
-  margin: 0;
+  margin-left: 0;
 }
 
-.list_naked > li {
-  list-style-image: none;
-  list-style-type: none;
+.list--nav a {
+  display: block;
+  padding-top: 9px;
+  padding-top:  0.5625rem;
+  padding-bottom: 9px;
+  padding-bottom:  0.5625rem;
+}
+
+.list--inline {
+  list-style: none;
   margin-left: 0;
 }
 
@@ -3468,17 +2915,14 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
 
 
 .wrap,
-.media,
 .clearfix {
   *zoom: 1;
 }
 
 
 .wrap:before,
-.media:before,
 .clearfix:before,
 .wrap:after,
-.media:after,
 .clearfix:after {
   display: table;
   content: " ";
@@ -3486,7 +2930,6 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
 
 
 .wrap:after,
-.media:after,
 .clearfix:after {
   clear: both;
   height: 0;

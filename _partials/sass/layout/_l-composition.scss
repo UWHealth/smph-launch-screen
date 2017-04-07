@@ -1,4 +1,4 @@
-$hero-mq: 'max-height' 900px;
+$hero-mq: 'max-height' 915px;
 
 .wrap {
 	margin: 0 auto;
@@ -76,6 +76,7 @@ $hero-mq: 'max-height' 900px;
 	padding-top: 1.5%;
 
 	@include mq($hero-mq) {
+        padding-top: .5%;
 		padding-bottom: .5%
 	}
 }

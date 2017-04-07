@@ -5,9 +5,20 @@
 // or high-specificity selectors.
 //-----------------------------------
 
-.list_naked {
-    @include no-bullets();
-    margin: 0;
+.list--nav {
+    list-style: none;
+    margin-left: 0;
+
+    a {
+        display: block;
+        @include type-space(padding-top, .5);
+        @include type-space(padding-bottom, .5);
+    }
+}
+
+.list--inline {
+    list-style: none;
+    margin-left: 0;
 }
 
 .link_naked,

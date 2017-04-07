@@ -11,13 +11,10 @@
     }
 
     @include mq('max-height' 750px) {
+
         .panel,
         .panel--slide {
-            @include type-space(padding, .75 .825);
-        }
-
-        .panel__cta {
-            margin-bottom: 0;
+            @include type-space(padding, .825 1);
         }
 
         .tier-2 .heading--underline {
@@ -27,19 +24,12 @@
 
     @include mq('max-height' 650px) {
 
-        .hero {
+        .hero .panel__head {
+            @include font-size($type-h3-size, $h3-lh);
 
-            .panel__head {
-                @include font-size($type-h3-size, $h3-lh);
-
-                @include mq('small') {
-                    font-size: 5vw;
-                }
+            @include mq('small') {
+                font-size: 5vw;
             }
-        }
-
-        .panel__cta {
-            @include font-size($type-small-size, $small-lh);
         }
 
         .panel__head--bottom {
@@ -132,5 +122,17 @@
         box-shadow:0 1px 6px -5px rgba(color(type), .25),
             0 0 1px 1px rgba(color(type), .13);
         background-color: mix(color(bg, light), color(badgers, light), 98%);
+    }
+}
+
+@include mq('max-height' 780px, 'smalls') {
+
+    html, :root {
+        font-size: 14px;
+    }
+
+    .panel__cta {
+        @include font-size($type-small-size, $small-lh);
+        margin-bottom: 0;
     }
 }
