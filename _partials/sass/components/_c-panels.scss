@@ -99,7 +99,7 @@ Panels require a modifier tag to gain most of their style (background and text c
 .panel__head {
     text-transform: uppercase;
     @include type-space(margin-bottom, 4);
-    margin-bottom: 5.5vh;
+    margin-bottom: 9.5vh;
 
     @include mq(smalls){
         font-size: 4.5vw;
