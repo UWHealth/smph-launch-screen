@@ -1777,11 +1777,7 @@ q:first-child {
   display: table;
   width: 100%;
   height: 60vh;
-  -webkit-background-size: cover;
-          background-size: cover;
   position: relative;
-  background-image: url("../images/bg_main.jpg");
-  background-position: top center;
 }
 
 @media only screen and (max-height: 915px) {
@@ -2374,7 +2370,7 @@ Moving from `h6` up to `h1`, the heading font sizes get larger on a scale. For i
 }
 
 .bar--mini:before {
-  font-size: 6px;
+  font-size: 8px;
   top: -9px;
   top:  -0.5625rem;
 }
@@ -2829,7 +2825,7 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
   background-color: #f9f5f5;
 }
 
-@media only screen and (max-height: 780px), screen and (max-width: 730px) {
+@media only screen and (max-width: 730px) {
   html, :root {
     font-size: 14px;
   }
