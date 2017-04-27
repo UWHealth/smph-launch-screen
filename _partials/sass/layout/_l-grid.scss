@@ -79,7 +79,7 @@ Grids are built on `inline-block`
 }
 
 .w-third {
-    @extend %one_third;
+    // @extend %one_third;
     flex-basis: grid-size(1,3);
 }
 
