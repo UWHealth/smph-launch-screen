@@ -2859,14 +2859,15 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
 .list--nav {
   list-style: none;
   margin-left: 0;
+  text-transform: uppercase;
 }
 
 .list--nav a {
-  display: block;
   padding-top: 9px;
   padding-top:  0.5625rem;
   padding-bottom: 9px;
   padding-bottom:  0.5625rem;
+  display: block;
 }
 
 .list--inline {
