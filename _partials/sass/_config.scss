@@ -359,23 +359,23 @@ $base-colors: (
 	'badgers': (
 		'base': #c5050c,
 		'dark': #ac040a,
-		'darker':#9b0000,
+		'darker': #9b0000,
 		'darkest': #850101,
 		'light': #de070e
 	),
 	'links': (
 		'base': #0479a8, //Required
-		'dark':#036890
+		'dark': #036890
 	),
 	'type': (
 		'base': #494949, //Required
 		'light': #8e8e92,
-		'lighter': #95989A
+		'lighter': #95989a
 	),
 	'bg': (
-		'base': #F7F7F7, //Required
-		'dark': #E4E4E4,
-		'darker': #CFCFCF,
+		'base': #f7f7f7, //Required
+		'dark': #e4e4e4,
+		'darker': #cfcfcf,
 		'darkest': #282728
 	),
 
@@ -394,8 +394,8 @@ $base-colors: generate-color-variations(
 		'darken', 'linearburn', 'linearburn'
 	),
 	$blending-colors: ( //Allows for more uniform colors
-		#cbcbcb, #D6D5D5, null,
-		null, #774E50, #3C3232
+		#cbcbcb, #d6d5d5, null,
+		null, #774e50, #3c3232
 	),
     $increments: ( //How strongly each color should be blended
 		30%,   60%,   80%,
