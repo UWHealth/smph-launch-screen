@@ -1433,7 +1433,7 @@ textarea {
 }
 
 :root {
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -2421,7 +2421,7 @@ Panels require a modifier tag to gain most of their style (background and text c
 }
 
 .panel--gray {
-  background-color: #E4E4E4;
+  background-color: #e4e4e4;
 }
 
 .panel--gray .panel__head {

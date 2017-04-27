@@ -1445,7 +1445,7 @@ All colors have a `base`, `light`, `lighter`, `lightest`, `dark`, `darker` and `
 }
 
 .color-block:nth-child(19) {
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   color: #000;
 }
 
@@ -1454,7 +1454,7 @@ All colors have a `base`, `light`, `lighter`, `lightest`, `dark`, `darker` and `
 }
 
 .color-block:nth-child(19):after {
-  content: "#F7F7F7";
+  content: "#f7f7f7";
 }
 
 .color-block:nth-child(20) {
@@ -1510,7 +1510,7 @@ All colors have a `base`, `light`, `lighter`, `lightest`, `dark`, `darker` and `
 }
 
 .color-block:nth-child(24) {
-  background-color: #E4E4E4;
+  background-color: #e4e4e4;
   color: #000;
 }
 
@@ -1519,7 +1519,7 @@ All colors have a `base`, `light`, `lighter`, `lightest`, `dark`, `darker` and `
 }
 
 .color-block:nth-child(24):after {
-  content: "#E4E4E4";
+  content: "#e4e4e4";
 }
 
 .color-block:nth-child(25) {
@@ -1575,7 +1575,7 @@ All colors have a `base`, `light`, `lighter`, `lightest`, `dark`, `darker` and `
 }
 
 .color-block:nth-child(29) {
-  background-color: #CFCFCF;
+  background-color: #cfcfcf;
   color: #000;
 }
 
@@ -1584,7 +1584,7 @@ All colors have a `base`, `light`, `lighter`, `lightest`, `dark`, `darker` and `
 }
 
 .color-block:nth-child(29):after {
-  content: "#CFCFCF";
+  content: "#cfcfcf";
 }
 
 .color-block:nth-child(30) {
@@ -1627,7 +1627,7 @@ All colors have a `base`, `light`, `lighter`, `lightest`, `dark`, `darker` and `
 }
 
 .color-block:nth-child(33) {
-  background-color: #95989A;
+  background-color: #95989a;
   color: #fff;
 }
 
@@ -1636,7 +1636,7 @@ All colors have a `base`, `light`, `lighter`, `lightest`, `dark`, `darker` and `
 }
 
 .color-block:nth-child(33):after {
-  content: "#95989A";
+  content: "#95989a";
 }
 
 .color-block:nth-child(34) {
@@ -1711,7 +1711,7 @@ All colors have a `base`, `light`, `lighter`, `lightest`, `dark`, `darker` and `
   position: fixed;
   vertical-align: top;
   background-color: #fff;
-  border-right: 1px solid #E4E4E4;
+  border-right: 1px solid #e4e4e4;
   width: 18rem;
   top: 0;
   left: 0;
@@ -1781,7 +1781,7 @@ All colors have a `base`, `light`, `lighter`, `lightest`, `dark`, `darker` and `
 .sg-menu_list {
   list-style: none;
   padding: 0;
-  color: #E4E4E4;
+  color: #e4e4e4;
   /* Used for border colors */
 }
 
@@ -1790,7 +1790,7 @@ All colors have a `base`, `light`, `lighter`, `lightest`, `dark`, `darker` and `
 }
 
 .sg-category-active {
-  background: #F7F7F7;
+  background: #f7f7f7;
 }
 
 /* Menu links */
@@ -1941,7 +1941,7 @@ All colors have a `base`, `light`, `lighter`, `lightest`, `dark`, `darker` and `
 
 .sg-example:before {
   content: 'Example';
-  background-color: #E4E4E4;
+  background-color: #e4e4e4;
   color: #8e8e92;
   display: inline-block;
   font-size: .9em;
@@ -1973,7 +1973,7 @@ All colors have a `base`, `light`, `lighter`, `lightest`, `dark`, `darker` and `
 }
 
 .sg-markup-block {
-  border-top: 1px solid #E4E4E4;
+  border-top: 1px solid #e4e4e4;
 }
 
 .sg-codespan {
@@ -2040,5 +2040,5 @@ All colors have a `base`, `light`, `lighter`, `lightest`, `dark`, `darker` and `
   margin-bottom:  0.5625rem;
   -webkit-background-clip: content-box;
           background-clip: content-box;
-  background-color: #E4E4E4;
+  background-color: #e4e4e4;
 }
