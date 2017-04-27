@@ -1,123 +1,124 @@
 $hero-mq: 'max-height' 915px;
 
 .wrap {
-	margin: 0 auto;
-	max-width: $max-site-width;
-	display: block !important;
+    @extend %clearfix;
+    @extend %bigs_nine_tenths; //90%
+    @extend %smallish_eleven_twelfths; //~92%
+    @include type-space(padding, 1 0);
+    display: block !important;
     float: none;
-	@extend %clearfix;
-	@include type-space(padding, 1 0);
+    margin: 0 auto;
+    max-width: $max-site-width;
 
-	@extend %bigs_nine_tenths; //90%
-	@extend %smallish_eleven_twelfths; //~92%
-	@include mq(small){
-		width: 95%;
-	}
+    @include mq(small) {
+        width: 95%;
+    }
 }
 
 .hero {
-	display: table;
-	width: 100%;
-	height: 60vh;
-	position: relative;
+    display: table;
+    height: 60vh;
+    position: relative;
+    width: 100%;
 
-	@include mq($hero-mq){
-		height: 40vh;
-	}
+    @include mq($hero-mq) {
+        height: 40vh;
+    }
 }
 
 .hero__body {
-	display: table-cell;
-	vertical-align: middle;
-	max-width: 99%;
-	@include type-space(padding, 1 0 1);
-	background-image: linear-gradient(to bottom, rgba(color(bg,darkest),.4), transparent 60%);
+    @include type-space(padding, 1 0 1);
+    display: table-cell;
+    max-width: 99%;
+    vertical-align: middle;
 
-	@include mq($hero-mq) {
-		@include type-space(padding, .5 0 .5);
-		padding: 2vh 0;
-	}
+    @include mq($hero-mq) {
+        @include type-space(padding, .5 0 .5);
+        padding: 2vh 0;
+    }
 
-	&:before,
-	&:after {
-		content: "";
-		height: 100%;
-		width: 60px;
-		background-size: 100% auto;
-		background-position: 50%;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-	}
+    &:before,
+    &:after {
+        background-position: 50%;
+        background-size: 100% auto;
+        bottom: 0;
+        content: "";
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 60px;
+    }
 
-	&:before {
-		left: 0;
-		background-image: url('../images/img_waves-left.svg');
-		background-position-x: 0%;
-	}
+    &:before {
+        background-image: url('../images/img_waves-left.svg');
+        background-position-x: 0%;
+        left: 0;
+    }
 
-	&:after {
-		right: 0;
-		background-image: url('../images/img_waves-right.svg');
-		background-position-x: 100%;
-	}
+    &:after {
+        background-image: url('../images/img_waves-right.svg');
+        background-position-x: 100%;
+        right: 0;
+    }
 
 }
 
 .hero__head {
-	display: table;
-	height: 30%;
-	width: 100%;
-	vertical-align: top;
-	padding-bottom: 3.5%;
-	padding-top: 1.5%;
+    display: table;
+    height: 30%;
+    padding-bottom: 3.5%;
+    padding-top: 1.5%;
+    vertical-align: top;
+    width: 100%;
 
-	@include mq($hero-mq) {
+    @include mq($hero-mq) {
         padding-top: .5%;
-		padding-bottom: .5%
-	}
+        padding-bottom: .5%
+    }
 }
 
 .hero__logo {
-	display: inline-block;
-	text-align: center;
-	opacity: .95;
+    display: inline-block;
+    opacity: .95;
+    text-align: center;
 
-	@include mq($hero-mq) {
-		max-width: 60px;
-	}
+    @include mq($hero-mq) {
+        max-width: 60px;
+    }
 
-	@include mq(smalls) {
-		max-width: 55px;
-	}
+    @include mq(smalls) {
+        max-width: 55px;
+    }
 }
 
 .tiers {
-	display: flex;
-	justify-content: space-between;
-	height: 100vh;
-	flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
 }
 
 .tier__1 {
-	height: auto;
-	min-height: 60vh;
-	flex: 0 1 auto;
+    background-color: colors('bg', 'dark');
+    flex: 0 1 auto;
+    height: auto;
+    min-height: 60vh;
 
-	@include mq($hero-mq) {
-		min-height: 47vh;
-	}
+    @include mq($hero-mq) {
+        min-height: 47vh;
+    }
 }
 
 .tier__2 {
-	flex: 0 1 auto;
-	vertical-align: middle;
-	@include type-space(padding, 1 0 1 1);
+    @include type-space(padding, 1 0 1 1);
+    background-color: colors('bg');
+    flex: 0 1 auto;
+    vertical-align: middle;
 }
 
 .tier__3 {
-	min-height: 5vh;
-	display: flex;
-	flex: 0 0 auto;
-	justify-self: flex-end;
+    display: flex;
+    flex: 0 0 auto;
+    justify-self: flex-end;
+    min-height: 5vh;
 }
