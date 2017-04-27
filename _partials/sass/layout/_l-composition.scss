@@ -111,7 +111,6 @@ $hero-mq: 'max-height' 915px;
 
 .tier__2 {
     @include type-space(padding, 1 0 1 1);
-    background-color: colors('bg');
     flex: 0 1 auto;
     vertical-align: middle;
 }
