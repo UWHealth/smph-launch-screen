@@ -1764,7 +1764,7 @@ q:first-child {
   display: block !important;
   float: none;
   margin: 0 auto;
-  max-width: 1240px;
+  max-width: 1440px;
 }
 
 @media only screen and (max-width: 480px) {
@@ -2436,16 +2436,16 @@ Panels require a modifier tag to gain most of their style (background and text c
 }
 
 .panel--elevated {
-  -webkit-box-shadow: 0 3px 26px 4px rgba(98, 59, 61, 0.4);
-     -moz-box-shadow: 0 3px 26px 4px rgba(98, 59, 61, 0.4);
-          box-shadow: 0 3px 26px 4px rgba(98, 59, 61, 0.4);
+  -webkit-box-shadow: 0 3px 26px 4px rgba(98, 59, 61, 0.15);
+     -moz-box-shadow: 0 3px 26px 4px rgba(98, 59, 61, 0.15);
+          box-shadow: 0 3px 26px 4px rgba(98, 59, 61, 0.15);
   z-index: 1;
 }
 
 .panel--elevated.panel--link:hover, .panel--elevated.panel--link:focus {
-  -webkit-box-shadow: 0 2px 16px 5px rgba(98, 59, 61, 0.4);
-     -moz-box-shadow: 0 2px 16px 5px rgba(98, 59, 61, 0.4);
-          box-shadow: 0 2px 16px 5px rgba(98, 59, 61, 0.4);
+  -webkit-box-shadow: 0 2px 16px 5px rgba(98, 59, 61, 0.25);
+     -moz-box-shadow: 0 2px 16px 5px rgba(98, 59, 61, 0.25);
+          box-shadow: 0 2px 16px 5px rgba(98, 59, 61, 0.25);
 }
 
 .panel--link {
@@ -2524,6 +2524,7 @@ Calls to action will receive special styling and a chevron after their content. 
   font-size: 1.25rem;
   font-family: "Vitesse", "Roboto Slab", "Rockwell", "Cambria", "Lucida Bright", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: italic;
+  font-weight: 400;
   word-break: break-all;
 }
 
@@ -2724,7 +2725,7 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
   .launch-screen .panel,
   .launch-screen .panel--slide {
     padding: 11.7px 20.25px;
-    padding:  0.73125rem 1.26563rem;
+    padding:  0.73125rem 1.26562rem;
   }
 }
 
@@ -2820,11 +2821,12 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
   background-color: #f9f5f5;
 }
 
-@media only screen and (max-width: 730px) {
+@media only screen and (max-height: 780px), screen and (max-width: 730px) {
   html, :root {
     font-size: 14px;
   }
   .panel__cta {
+    font-size: 14px;
     font-size: 0.875rem;
     line-height: 1.71429;
     margin-bottom: 0;

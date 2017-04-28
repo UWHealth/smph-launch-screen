@@ -125,14 +125,14 @@
     }
 }
 
-@include mq('max-height' 780px, 'smalls') {
+@media only screen and (max-height: 780px), screen and (max-width:730px) {
 
-    html, :root {
-        font-size: 14px;
-    }
+        html, :root {
+            font-size: 14px;
+        }
 
-    .panel__cta {
-        @include font-size($type-small-size, $small-lh);
-        margin-bottom: 0;
-    }
+        .panel__cta {
+            @include font-size($type-small-size, $small-lh);
+            margin-bottom: 0;
+        }
 }
