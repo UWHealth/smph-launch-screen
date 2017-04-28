@@ -55,7 +55,7 @@
         }
     }
 
-    @include mq('max-width' 640px) {
+    @include mq('smalls') {
 
         .slider {
             margin-left: -2%;
@@ -89,7 +89,7 @@
         height: 100%;
     }
 
-    @include mq('min-width' 641px) { //Fallback for slider not initializing
+    @include mq('bigs') { //Fallback for slider not initializing
         .slider:not(.slick-initialized) {
             display: flex;
             flex-direction: row;

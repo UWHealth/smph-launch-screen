@@ -2745,7 +2745,7 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
   }
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 730px) {
   .launch-screen .slider {
     margin-left: -2%;
   }
@@ -2775,7 +2775,7 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
   height: 100%;
 }
 
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 731px) {
   .launch-screen .slider:not(.slick-initialized) {
     display: -webkit-box;
     display: -moz-box;
