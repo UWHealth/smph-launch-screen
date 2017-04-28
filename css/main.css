@@ -1877,6 +1877,12 @@ q:first-child {
           justify-content: space-between;
 }
 
+@media only screen and (max-width: 730px) {
+  .tiers {
+    height: auto;
+  }
+}
+
 .tier__1 {
   background-color: #e4e4e4;
   -webkit-box-flex: 0;
@@ -2725,7 +2731,7 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
   .launch-screen .panel,
   .launch-screen .panel--slide {
     padding: 11.7px 20.25px;
-    padding:  0.73125rem 1.26562rem;
+    padding:  0.73125rem 1.26563rem;
   }
 }
 
