@@ -1,7 +1,6 @@
 // sizing for safari
 $(function() {
-    $(window).resize(function() {
-        var boxHeight = $('.tier__2 .panel--dust-2').height();
-        $('.panel--slide').height(boxHeight);
-    }).resize();
+    var boxHeight = $('.tier__2 .panels').height();
+    var boxCSS = { 'height' : boxheight + "px" };
+    $('#js-slider').css(boxCSS);
 });
