@@ -20,6 +20,7 @@ Panels require a modifier tag to gain most of their style (background and text c
     @include type-space(padding, 1 .9);
     position: relative;
     flex: 1 1 auto;
+    height: 22vh;
 
     @include mq(smalls) {
         @include type-space(padding, .5 .45);
@@ -95,7 +96,6 @@ Panels require a modifier tag to gain most of their style (background and text c
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 22vh;
 }
 
 .panel__head {

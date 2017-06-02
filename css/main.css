@@ -2397,6 +2397,7 @@ Panels require a modifier tag to gain most of their style (background and text c
      -moz-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+  height: 22vh;
 }
 
 @media only screen and (max-width: 730px) {
@@ -2489,7 +2490,6 @@ Panels require a modifier tag to gain most of their style (background and text c
      -moz-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 22vh;
 }
 
 .panel__head {
@@ -2609,7 +2609,6 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
 
 .slick-slide {
   display: inline-block;
-  height: 100%;
 }
 
 .slick-track {
@@ -2790,7 +2789,6 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
   margin-right:  0.28125rem;
   vertical-align: bottom;
   outline: none;
-  height: 100%;
 }
 
 .panel--slide:hover, .panel--slide:focus {
