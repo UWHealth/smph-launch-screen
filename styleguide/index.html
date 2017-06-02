@@ -732,7 +732,7 @@ Children can be named four things:</p><ul>
                 <h6 id="function-color-" class="sg-heading sg-heading-6">function(<code class="sg-code sg-codespan">$color</code>)</h6>
 <p>Change text color based on background-color&#x2019;s darkness.</p>
 <div class="sg-markup sg-codeblock">
-<pre class="sg-markup_wrap"><code class="hljs sg-code undefined"><span class="hljs-selector-tag">div</span> {
+<pre class="sg-markup_wrap"><code class="hljs sg-code  "><span class="hljs-selector-tag">div</span> {
     <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#f8cd12</span>;
     <span class="hljs-attribute">color</span>: set_text_color(<span class="hljs-number">#f8cd12</span>);
 }
@@ -748,7 +748,7 @@ Children can be named four things:</p><ul>
 <br>
 <a href="https://gist.github.com/voxpelli/6304812">Taken from here</a></p>
 <div class="sg-markup sg-codeblock">
-<pre class="sg-markup_wrap"><code class="hljs sg-code undefined"><span class="hljs-selector-tag">div</span> {
+<pre class="sg-markup_wrap"><code class="hljs sg-code  "><span class="hljs-selector-tag">div</span> {
     <span class="hljs-attribute">color</span>: pick_best_color(<span class="hljs-number">#f8cd12</span>, (<span class="hljs-number">#a0a0c0</span>, <span class="hljs-number">#fff</span>, <span class="hljs-number">#2c2c2c</span>));
 }
 <span class="hljs-comment">// The function would test the colors and find that #2c2c2c is the best.</span>
@@ -782,7 +782,7 @@ Children can be named four things:</p><ul>
                 <h6 id="function-color-name-tone-39-base-39-opacity-1-" class="sg-heading sg-heading-6">function(<code class="sg-code sg-codespan">$color-name, $tone: &apos;base&apos;, $opacity: 1</code>)</h6>
 <p>Get a color value from the global <code id="variable--base-colors" class="sg-global-variable sg-code sg-codespan sg-global" data-code-id="$base-colors">$base-colors</code> map. Darker and lighter tones are available by passing a second string.</p>
 <div class="sg-markup sg-codeblock">
-<pre class="sg-markup_wrap"><code class="hljs sg-code undefined"><span class="hljs-selector-class">.foo</span> {
+<pre class="sg-markup_wrap"><code class="hljs sg-code  "><span class="hljs-selector-class">.foo</span> {
     <span class="hljs-attribute">background-color</span>: colors(links, light));
 }
 </code></pre>
@@ -816,7 +816,7 @@ Children can be named four things:</p><ul>
 <br>
 <code class="sg-code sg-codespan">type</code>, <code class="sg-code sg-codespan">links</code>, and <code class="sg-code sg-codespan">bg</code> key values are required for some starter styles. If you choose not to use them, just replace their references in the appropriate files.</p><p>Supports a nested map style like the following:</p>
 <div class="sg-markup sg-codeblock">
-<pre class="sg-markup_wrap"><code class="hljs sg-code undefined"><span class="hljs-variable">$base-colors</span>: (
+<pre class="sg-markup_wrap"><code class="hljs sg-code  "><span class="hljs-variable">$base-colors</span>: (
   <span class="hljs-string">&apos;type&apos;</span>:(
     <span class="hljs-string">&apos;base&apos;</span>:red,
     <span class="hljs-string">&apos;light&apos;</span>: pink,
@@ -863,7 +863,7 @@ Children can be named four things:</p><ul>
                 <h6 id="map-breakpoint-name-39-breakpoint-value-39-" class="sg-heading sg-heading-6">Map (<code class="sg-code sg-codespan">breakpoint-name: &apos;breakpoint-value&apos;</code>)</h6>
 <p>Sets up variables for media-queries. Used in <code id="mixin-media-query" class="sg-global-mixin sg-code sg-codespan sg-global" data-code-id="@media-query()">@media-query()</code>.</p><p><strong>Example</strong></p>
 <div class="sg-markup sg-codeblock">
-<pre class="sg-markup_wrap"><code class="hljs sg-code undefined"><span class="hljs-variable">$breakpoints</span>: (
+<pre class="sg-markup_wrap"><code class="hljs sg-code  "><span class="hljs-variable">$breakpoints</span>: (
   <span class="hljs-string">&apos;small&apos;</span>:<span class="hljs-string">&apos;(min-width: 320px)&apos;</span>,
   <span class="hljs-string">&apos;bigs&apos;</span>:<span class="hljs-string">&apos;(min-width: 850px)&apos;</span>
 );
@@ -873,7 +873,7 @@ Children can be named four things:</p><ul>
                 <h6 id="map-string-string-" class="sg-heading sg-heading-6">Map (string: string)</h6>
 <p>Variable used to generate display classes. Key value pairs determine the class name and the display value. If <code id="variable--breakpoint-has-display-classes" class="sg-global-variable sg-code sg-codespan sg-global" data-code-id="$breakpoint-has-display-classes">$breakpoint-has-display-classes</code> is false, this can be ignored</p><p><strong>Example</strong></p>
 <div class="sg-markup sg-codeblock">
-<pre class="sg-markup_wrap"><code class="hljs sg-code undefined"><span class="hljs-comment">//SCSS input</span>
+<pre class="sg-markup_wrap"><code class="hljs sg-code  "><span class="hljs-comment">//SCSS input</span>
 <span class="hljs-variable">$display-classes</span>: (<span class="hljs-string">&apos;show&apos;</span>:<span class="hljs-string">&apos;block&apos;</span>);
 
 <span class="hljs-comment">//CSS output</span>
@@ -890,7 +890,7 @@ Children can be named four things:</p><ul>
 </ul>
 <p><strong>Example</strong></p>
 <div class="sg-markup sg-codeblock">
-<pre class="sg-markup_wrap"><code class="hljs sg-code undefined"><span class="hljs-comment">//SCSS Input</span>
+<pre class="sg-markup_wrap"><code class="hljs sg-code  "><span class="hljs-comment">//SCSS Input</span>
 <span class="hljs-variable">$display-classes</span>: (
     <span class="hljs-string">&apos;directions&apos;</span>: (<span class="hljs-string">&apos;t&apos;</span>, <span class="hljs-string">&apos;r&apos;</span>),
     <span class="hljs-string">&apos;amounts&apos;</span>: (<span class="hljs-number">2</span>, -<span class="hljs-number">1</span>),
@@ -1178,7 +1178,7 @@ A <code class="sg-code sg-codespan">false</code> value will output no classes of
                 <h6 id="function-x-" class="sg-heading sg-heading-6">function(<code class="sg-code sg-codespan">$x</code>)</h6>
 <p>Returns the natural logarithm of a number.</p>
 <div class="sg-markup sg-codeblock">
-<pre class="sg-markup_wrap"><code class="hljs sg-code undefined"><span class="hljs-variable">$value</span>:   log(<span class="hljs-number">2</span>)  // <span class="hljs-number">0.69315</span>
+<pre class="sg-markup_wrap"><code class="hljs sg-code  "><span class="hljs-variable">$value</span>:   log(<span class="hljs-number">2</span>)  // <span class="hljs-number">0.69315</span>
 <span class="hljs-variable">$value2</span>:  log(<span class="hljs-number">10</span>) // <span class="hljs-number">2.30259</span>
 </code></pre>
 </div>
@@ -1193,7 +1193,7 @@ A <code class="sg-code sg-codespan">false</code> value will output no classes of
                 <h6 id="function-x-" class="sg-heading sg-heading-6">function(<code class="sg-code sg-codespan">$x</code>)</h6>
 <p>Returns E^x, where x is the argument, and E is Euler&#x2019;s constant, the base of the natural logarithms.</p>
 <div class="sg-markup sg-codeblock">
-<pre class="sg-markup_wrap"><code class="hljs sg-code undefined"><span class="hljs-variable">$value</span>: exp(<span class="hljs-number">1</span>)  // <span class="hljs-number">2.71828</span>
+<pre class="sg-markup_wrap"><code class="hljs sg-code  "><span class="hljs-variable">$value</span>: exp(<span class="hljs-number">1</span>)  // <span class="hljs-number">2.71828</span>
 <span class="hljs-variable">$value2</span>: exp(-<span class="hljs-number">1</span>) // <span class="hljs-number">0.36788</span>
 </code></pre>
 </div>
@@ -1202,7 +1202,7 @@ A <code class="sg-code sg-codespan">false</code> value will output no classes of
                 <h6 id="function-x-" class="sg-heading sg-heading-6">function(<code class="sg-code sg-codespan">$x</code>)</h6>
 <p>Returns the factorial of a non-negative integer.</p>
 <div class="sg-markup sg-codeblock">
-<pre class="sg-markup_wrap"><code class="hljs sg-code undefined"><span class="hljs-variable">$value</span>:  fact(<span class="hljs-number">0</span>) // <span class="hljs-number">1</span>
+<pre class="sg-markup_wrap"><code class="hljs sg-code  "><span class="hljs-variable">$value</span>:  fact(<span class="hljs-number">0</span>) // <span class="hljs-number">1</span>
 <span class="hljs-variable">$value2</span>: fact(<span class="hljs-number">8</span>) // <span class="hljs-number">40320</span>
 </code></pre>
 </div>
@@ -1503,7 +1503,7 @@ Depends on <code id="function-baseline" class="sg-global-function sg-code sg-cod
                 <h6 id="mixin-border-" class="sg-heading sg-heading-6">mixin(<code class="sg-code sg-codespan">$border</code>)</h6>
 <p>Allows creating many border properties at once. Works like the standard border shorthand style but allows varied styles on different border directions.</p>
 <div class="sg-markup sg-codeblock">
-<pre class="sg-markup_wrap"><code class="hljs sg-code undefined">    <span class="hljs-comment">//scss</span>
+<pre class="sg-markup_wrap"><code class="hljs sg-code  ">    <span class="hljs-comment">//scss</span>
     <span class="hljs-selector-class">.foo</span> {
         @<span class="hljs-keyword">include</span> border(<span class="hljs-number">2px</span> 3px solid dashed dotted blue currentColor yellow);
     }
@@ -1562,7 +1562,7 @@ Depends on <code id="function-baseline" class="sg-global-function sg-code sg-cod
 </ul>
 <p><strong>Example</strong></p>
 <div class="sg-markup sg-codeblock">
-<pre class="sg-markup_wrap"><code class="hljs sg-code undefined"><span class="hljs-comment">// SCSS input</span>
+<pre class="sg-markup_wrap"><code class="hljs sg-code  "><span class="hljs-comment">// SCSS input</span>
 <span class="hljs-selector-class">.foo</span> {
     @<span class="hljs-keyword">include</span> type-space(padding, 1 .25 .5, <span class="hljs-string">&apos;!important&apos;</span>);
 }
@@ -1791,7 +1791,7 @@ $name is required, arbitrary, and what you will use in font stacks.
                         <h2 id="style-guide-generation" class="sg-heading sg-heading-2">Style Guide generation</h2>
 <p>The style guide you are reading is generated on the fly by the <code class="sg-code sg-codespan">gulp</code> task <code class="sg-code sg-codespan">styleguide</code> (using the markdown-styleguide-generator node module).</p><p>To create style guide entries, create a comment block with the <code class="sg-code sg-codespan">SG</code> in the first line. The next immediate line should be title of your style guide entry (using a <code class="sg-code sg-codespan">#</code> to demarcate the start). A <code class="sg-code sg-codespan">/</code> will indicate a sub-section title. So <code class="sg-code sg-codespan">#Title/Sub-section</code> will create a parent section named &#x201C;Title&#x201D;, with a child named &#x201C;Sub-section&#x201D;.</p><p>Create <code class="sg-code sg-codespan">html</code> examples (with a code snippet) by creating a code block followed by &#x201C;html_example&#x201D; (```html_example).</p>
 <div class="sg-markup sg-codeblock">
-<pre class="sg-markup_wrap"><code class="hljs sg-code undefined">/* SG
+<pre class="sg-markup_wrap"><code class="hljs sg-code  ">/* SG
 <span class="hljs-comment"># Section/Component</span>
 This <span class="hljs-keyword">is</span> an example Component.
 
@@ -1803,7 +1803,7 @@ This <span class="hljs-keyword">is</span> an example Component.
 </div>
 <p>Separating &#x201C;development&#x201D; comments from &#x201C;styles&#x201D; requires adding a <code class="sg-code sg-codespan">[[dev]]</code> anywhere within the title of that section.</p>
 <div class="sg-markup sg-codeblock">
-<pre class="sg-markup_wrap"><code class="hljs sg-code undefined">/* SG
+<pre class="sg-markup_wrap"><code class="hljs sg-code  ">/* SG
 # Section/Component <span class="hljs-string">[[dev]]</span>
 </code></pre>
 </div>
