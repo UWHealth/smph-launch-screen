@@ -1383,10 +1383,6 @@ svg:not(:root) {
   overflow: hidden;
 }
 
-svg {
-  fill: currentColor;
-}
-
 template {
   display: none;
 }
@@ -2078,6 +2074,7 @@ Grids are built on `inline-block`
 .w-third {
   -ms-flex-preferred-size: 33.33233%;
       flex-basis: 33.33233%;
+  width: 33.33233%;
 }
 
 .w-two-thirds {
@@ -2492,13 +2489,11 @@ Panels require a modifier tag to gain most of their style (background and text c
      -moz-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  height: 22vh;
 }
 
 .panel__head {
   text-transform: uppercase;
-  margin-bottom: 72px;
-  margin-bottom:  4.5rem;
-  margin-bottom: 9.5vh;
 }
 
 @media only screen and (max-width: 730px) {
@@ -2584,22 +2579,10 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
 
 */
 .panels {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-     -moz-box-orient: horizontal;
-     -moz-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -webkit-box-pack: justify;
      -moz-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
   -webkit-box-align: stretch;
      -moz-box-align: stretch;
       -ms-flex-align: stretch;

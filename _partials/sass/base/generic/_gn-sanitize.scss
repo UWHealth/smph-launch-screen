@@ -57,10 +57,6 @@ svg:not(:root) {
 	overflow: hidden; // Internet Explorer 11-
 }
 
-svg {
-	fill: currentColor;
-}
-
 template {
 	display: none; // Android 4.3-, Internet Explorer 11-, iOS 7-, Safari 7-, Windows Phone 8.1+
 }

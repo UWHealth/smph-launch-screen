@@ -95,12 +95,11 @@ Panels require a modifier tag to gain most of their style (background and text c
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 22vh;
 }
 
 .panel__head {
     text-transform: uppercase;
-    @include type-space(margin-bottom, 4);
-    margin-bottom: 9.5vh;
 
     @include mq(smalls){
         font-size: 4.5vw;
@@ -184,9 +183,9 @@ Adding `panel--flex` to any children will force any call-to-actions to the botto
 */
 
 .panels {
-    display: flex;
-    flex-direction: row;
+    // display: flex;
+    // flex-direction: row;
     justify-content: space-between;
-    flex-wrap: nowrap;
+    // flex-wrap: nowrap;
     align-items: stretch;
 }
